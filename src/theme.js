@@ -1,3 +1,7 @@
 export const theme = {
-    main: 'black'
+    colors: {
+        main: 'red',
+        dark: 'darkgrey',
+        light: 'lightgrey',
+    },
 };
