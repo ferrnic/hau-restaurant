@@ -5,8 +5,8 @@ const Restaurant = () => (
   <div>
     Restaurant
       <ul>
-          <Link to='/vins'>vins</Link>
-          <Link to='/carte'>carte</Link>
+        <Link to='/vins'>vins</Link>
+        <Link to='/carte'>carte</Link>
       </ul>
   </div>
 );
