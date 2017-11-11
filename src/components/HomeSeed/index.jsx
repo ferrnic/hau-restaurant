@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   
   *{
     position: absolute;
+    fill: ${p => p.theme.colors.dark};
   }
   
   .letter{
