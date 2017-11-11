@@ -1,7 +1,7 @@
 export const theme = {
     colors: {
-        main: 'red',
-        dark: 'darkgrey',
-        light: 'lightgrey',
+        main: '#E61717',
+        dark: '#343029',
+        light: '#E6E6E6',
     },
 };
