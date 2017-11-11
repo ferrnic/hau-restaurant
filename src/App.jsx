@@ -4,18 +4,22 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import { theme } from "./theme";
 import Home from "./components/Home";
-import Carte from "./components/Carte";
-import Vins from "./components/Vins";
-import Restaurant from "./components/Restaurant";
+import PagesWrapper from "./components/PagesWrapper";
 
 const App = () => (
   <ThemeProvider theme={theme}>
     <Router>
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/carte" component={Carte}/>
-        <Route path="/vins" component={Vins}/>
-        <Route path="/restaurant" component={Restaurant}/>
+      <Route path="/carte" render={props => (
+        <PagesWrapper />   
+      )}/>
+      <Route path="/vins" render={props => (
+        <PagesWrapper />   
+      )}/>
+      <Route path="/restaurant" render={props => (
+        <PagesWrapper />   
+      )}/>
+      <Route path="/" component={Home}/>
       </Switch>
     </Router>
   </ThemeProvider>
