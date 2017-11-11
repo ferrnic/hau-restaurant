@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
-import Navigation from './Navigation';
+import Navigation from '../components/Navigation';
 
 const BackGround = styled.div`
 position: relative;  

@@ -2,11 +2,11 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
 
-import HomeSeed from './HomeSeed';
-import LetterH from './HomeSeed/LetterH';
-import LetterA from './HomeSeed/LetterA';
-import LetterU from './HomeSeed/LetterU';
-import Seed from './HomeSeed/Seed';
+import HomeSeed from '../components/HomeSeed';
+import LetterH from '../components/HomeSeed/LetterH';
+import LetterA from '../components/HomeSeed/LetterA';
+import LetterU from '../components/HomeSeed/LetterU';
+import Seed from '../components/HomeSeed/Seed';
 
 const BackGround = styled.div`
   position: relative;  

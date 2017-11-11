@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components";
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 
 import { theme } from "./theme";
-import Home from "./components/Home";
-import PagesWrapper from "./components/PagesWrapper";
+import Home from "./views/Home";
+import PagesWrapper from "./views/PagesWrapper";
 
 const App = () => (
   <ThemeProvider theme={theme}>
