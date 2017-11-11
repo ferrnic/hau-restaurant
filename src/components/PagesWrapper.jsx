@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
+import Navigation from './Navigation';
 
 const BackGround = styled.div`
 position: relative;  
@@ -25,18 +26,14 @@ const Logo = styled(Link)`
   background-color: ${props => props.theme.colors.dark};
 `;
 
-const Navigation = styled.div`
-  height: 100px;
-  margin: 10px;
-  background-color: ${props => props.theme.colors.dark};
-`;
-
 const MenuContent = styled.div`
   height: 100vh;
   margin: 10px;
   background-color: ${props => props.theme.colors.dark};
-
-  `;
+  color: ${props => props.theme.colors.light};
+  left: 100px;
+  position: absolute;
+`;
 
 const Slideshow = styled.div`
   position: absolute;
@@ -44,15 +41,21 @@ const Slideshow = styled.div`
 `;
 
 
-const PagesWrapper = () => (
-  <BackGround>
-    <Menu>
-      <Logo to="/" />
-      <Navigation />
-    </Menu>
-    <MenuContent />
-    <Slideshow />
-  </BackGround>
-);
+const PagesWrapper = ({location}) => {
+  console.log(location.pathname)  
+  return (
+    <BackGround>
+      <Menu>
+        <Logo to="/" />
+        <Navigation />
+        <ul><Link to='/carte'>carte</Link></ul>
+        <ul><Link to='/vins'>vins</Link></ul>
+        <ul><Link to='/restaurant'>restaurant</Link></ul>
+        </Menu>
+      <MenuContent/>
+      <Slideshow />
+    </BackGround>
+  );
+}
 
 export default PagesWrapper;
