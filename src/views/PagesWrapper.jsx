@@ -42,15 +42,11 @@ const Slideshow = styled.div`
 
 
 const PagesWrapper = ({location}) => {
-  console.log(location.pathname)  
   return (
     <BackGround>
       <Menu>
         <Logo to="/" />
         <Navigation />
-        <ul><Link to='/carte'>carte</Link></ul>
-        <ul><Link to='/vins'>vins</Link></ul>
-        <ul><Link to='/restaurant'>restaurant</Link></ul>
         </Menu>
       <MenuContent/>
       <Slideshow />
