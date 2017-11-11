@@ -2,15 +2,15 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import Navigation from '../components/Navigation';
+import MenuContent from '../components/MenuContent';
 
-const BackGround = styled.div`
-position: relative;  
-width: 100vw;
-height: 100vh;
-background-color: ${props => props.theme.colors.light};
+const Wrapper = styled.div`
+  position: relative;  
+  width: 100vw;
+  height: 100vh;
 `;
 
-const Menu = styled.div`
+const LeftMenu = styled.div`
   padding: 10px;
   background-color: ${props => props.theme.colors.main};
   position: fixed;
@@ -26,15 +26,6 @@ const Logo = styled(Link)`
   background-color: ${props => props.theme.colors.dark};
 `;
 
-const MenuContent = styled.div`
-  height: 100vh;
-  margin: 10px;
-  background-color: ${props => props.theme.colors.dark};
-  color: ${props => props.theme.colors.light};
-  left: 100px;
-  position: absolute;
-`;
-
 const Slideshow = styled.div`
   position: absolute;
   display: none
@@ -43,14 +34,14 @@ const Slideshow = styled.div`
 
 const PagesWrapper = ({location}) => {
   return (
-    <BackGround>
-      <Menu>
+    <Wrapper>
+      <LeftMenu>
         <Logo to="/" />
         <Navigation />
-        </Menu>
+      </LeftMenu>
       <MenuContent/>
       <Slideshow />
-    </BackGround>
+    </Wrapper>
   );
 }
 
