@@ -10,9 +10,8 @@ const Wrapper = styled.div`
   left: 100px;
   position: absolute;
   visibility: ${props => props.isCurrent ? 'visible' : 'hidden'};
-  `;
-  
-  
+`;
+
 const Carte = (props) => {
   const {
     name,
