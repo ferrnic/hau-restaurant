@@ -33,8 +33,12 @@ const Slideshow = styled.div`
   display: none
 `;
 
-const PagesWrapper = ({location}) => {
-  // const currentMenu = location.pathname.slice(1);
+const PagesWrapper = ({location, history}) => {
+  const handleClick = (name) => {
+    if (name !== location.pathname.slice(1)) {
+      history.go(`/${name}`)
+    }
+  }
 
   return (
     <Wrapper>
@@ -42,9 +46,30 @@ const PagesWrapper = ({location}) => {
         <Logo to="/" />
         <Navigation />
       </LeftMenu>
-      <Carte isCurrent={location.pathname == '/carte'} >carte</Carte>
-      <Carte isCurrent={location.pathname == '/restaurant'} >restaurant</Carte>
-      <Carte isCurrent={location.pathname == '/vins'} >vins</Carte>
+      <Carte
+        name='carte'
+        isCurrent={location.pathname === '/carte'}
+        onClick={name => handleClick(name)}
+        currentMenu={carte}
+      >
+        carte
+      </Carte>
+      <Carte
+        name='restaurant'
+        isCurrent={location.pathname === '/restaurant'}
+        onClick={name => handleClick(name)}
+        currentMenu={restaurant}
+      >
+        restaurant
+      </Carte>
+      <Carte
+        name='vins'
+        isCurrent={location.pathname === '/vins'}
+        onClick={name => handleClick(name)}
+        currentMenu={vins}
+      >
+        vins
+      </Carte>
       <Slideshow />
     </Wrapper>
   );

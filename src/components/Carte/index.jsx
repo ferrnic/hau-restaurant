@@ -8,13 +8,25 @@ const Wrapper = styled.div`
   color: ${props => props.theme.colors.light};
   left: 100px;
   position: absolute;
+  visibility: ${props => props.isCurrent ? 'visible' : 'hidden'};
   `;
   
   
-const Carte = ({ currentMenu }) => {
+const Carte = (props) => {
+  const {
+    name,
+    onClick,
+    isCurrent,
+    currentMenu,
+  } = props;
+  
+  const handleClick = () => {
+    onClick(name)
+  };
+
   return (
-    <Wrapper>
-      lalalallala
+    <Wrapper isCurrent={isCurrent} onClick={handleClick}>
+      {currentMenu.toString()}
     </Wrapper>
   );
 }
