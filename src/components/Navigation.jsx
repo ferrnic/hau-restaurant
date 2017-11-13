@@ -1,28 +1,60 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
 
+import HomeSeed from './HomeSeed';
+import LetterH from '../components/HomeSeed/LetterH';
+import LetterA from '../components/HomeSeed/LetterA';
+import LetterU from '../components/HomeSeed/LetterU';
+
 const Wrapper = styled.div`
-  height: 100px;
-  margin: 10px;
-  border: 5px solid ${props => props.theme.colors.dark};
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+
   .selected {
-    color: green;
+    div {
+      svg {
+        fill: ${p => p.theme.colors.light};
+      }
+    }
+  }
+`;
+
+const StyledLink = styled(NavLink)`
+  display: block;
+  div {
+    height: 70px; 
   }
 `;
 
 const Navigation = () => {
   return (
     <Wrapper>
-      <NavLink activeClassName="selected" to='/carte'>
-        carte
-      </NavLink>
-      <NavLink activeClassName="selected" to='/restaurant'>
+      <StyledLink 
+        activeClassName="selected"
+        to='/carte'
+      >
+        <HomeSeed Letter={<LetterH />}>
+          carte
+        </HomeSeed>
+      </StyledLink>
+      <StyledLink 
+        activeClassName="selected"
+        to='/restaurant'
+      >
+        <HomeSeed Letter={<LetterA />}>
         restaurant
-      </NavLink>
-      <NavLink activeClassName="selected" to='/vins'>
+        </HomeSeed>
+      </StyledLink>
+      <StyledLink 
+        activeClassName="selected"
+        to='/vins'
+      >
+        <HomeSeed Letter={<LetterU />}>
         vins
-      </NavLink>
+        </HomeSeed>
+      </StyledLink>
     </Wrapper>
   );
 }
