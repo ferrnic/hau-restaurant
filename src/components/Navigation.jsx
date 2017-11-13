@@ -1,19 +1,28 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
   height: 100px;
   margin: 10px;
   border: 5px solid ${props => props.theme.colors.dark};
+  .selected {
+    color: green;
+  }
 `;
 
-const Navigation = () => {
+const Navigation = ({ currentMenu }) => {
   return (
     <Wrapper>
-      <ul><Link to='/carte'>carte</Link></ul>
-      <ul><Link to='/restaurant'>restaurant</Link></ul>
-      <ul><Link to='/vins'>vins</Link></ul>
+      <NavLink activeClassName="selected" to='/carte'>
+        carte
+      </NavLink>
+      <NavLink activeClassName="selected" to='/restaurant'>
+        restaurant
+      </NavLink>
+      <NavLink activeClassName="selected" to='/vins'>
+        vins
+      </NavLink>
     </Wrapper>
   );
 }
