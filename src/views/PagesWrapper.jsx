@@ -19,6 +19,9 @@ const LeftMenu = styled.div`
   left: 0;
   height: 100vh;
   width: 100px;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 const Logo = styled(Link)`
