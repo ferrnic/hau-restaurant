@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -11,12 +10,13 @@ const Wrapper = styled.div`
   position: absolute;
   `;
   
-  const MenuContent = () => {
-    return (
-      <Wrapper>
-        content
-      </Wrapper>
+  
+const Carte = ({ currentMenu }) => {
+  return (
+    <Wrapper>
+      lalalallala
+    </Wrapper>
   );
 }
 
-export default MenuContent;
+export default Carte;

@@ -1,8 +1,10 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
+
 import Navigation from '../components/Navigation';
-import MenuContent from '../components/MenuContent';
+import Carte from '../components/Carte';
+import { carte, vins, restaurant } from '../menuData';
 
 const Wrapper = styled.div`
   position: relative;  
@@ -31,15 +33,18 @@ const Slideshow = styled.div`
   display: none
 `;
 
-
 const PagesWrapper = ({location}) => {
+  // const currentMenu = location.pathname.slice(1);
+
   return (
     <Wrapper>
       <LeftMenu>
         <Logo to="/" />
         <Navigation />
       </LeftMenu>
-      <MenuContent/>
+      <Carte isCurrent={location.pathname == '/carte'} >carte</Carte>
+      <Carte isCurrent={location.pathname == '/restaurant'} >restaurant</Carte>
+      <Carte isCurrent={location.pathname == '/vins'} >vins</Carte>
       <Slideshow />
     </Wrapper>
   );
