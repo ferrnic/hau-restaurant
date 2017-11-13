@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import CarteContent from './CarteContent'
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -26,7 +27,8 @@ const Carte = (props) => {
 
   return (
     <Wrapper isCurrent={isCurrent} onClick={handleClick}>
-      {currentMenu.toString()}
+      <h1>{name}</h1>
+      <CarteContent content={currentMenu}/>
     </Wrapper>
   );
 }
