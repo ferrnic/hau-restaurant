@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Navigation = ({ currentMenu }) => {
+const Navigation = () => {
   return (
     <Wrapper>
       <NavLink activeClassName="selected" to='/carte'>
