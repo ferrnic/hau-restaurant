@@ -29,15 +29,15 @@ const CarteContent = (props) => {
 CarteContent.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string,
+      name: PropTypes.string.isRequired,
       items: PropTypes.arrayOf(
         PropTypes.shape({
-          name: PropTypes.string,
-          price: PropTypes.number,
+          name: PropTypes.string.isRequired,
+          price: PropTypes.number.isRequired,
         })
-      )
+      ).isRequired
     })
-  )
+  ).isRequired
 }
 
 export default CarteContent;
