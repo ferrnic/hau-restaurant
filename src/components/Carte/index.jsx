@@ -4,9 +4,8 @@ import CarteContent from './CarteContent'
 
 const Wrapper = styled.div`
   height: 100vh;
-  margin: 10px;
-  background-color: ${props => props.theme.colors.dark};
-  color: ${props => props.theme.colors.light};
+  padding: 50px;
+  color: ${props => props.theme.colors.dark};
   left: 100px;
   position: absolute;
   visibility: ${props => props.isCurrent ? 'visible' : 'hidden'};

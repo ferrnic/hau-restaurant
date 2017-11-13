@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Seed from './Seed';
 
 const Wrapper = styled.div`
   transform: rotate(${p => p.rotation}deg);
@@ -10,7 +12,6 @@ const Wrapper = styled.div`
   
   *{
     position: absolute;
-    fill: ${p => p.theme.colors.dark};
   }
   
   .letter{
@@ -37,5 +38,14 @@ const HomeSeed = ({Seed, Letter}) => (
     {Letter}  
   </Wrapper>
 );
+
+HomeSeed.propTypes = {
+  Seed: PropTypes.element,
+  Letter: PropTypes.element.isRequired,
+}
+
+HomeSeed.defaultProps = {
+  Seed: <Seed />,
+}
 
 export default HomeSeed;

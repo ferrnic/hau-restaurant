@@ -12,6 +12,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding: 0 5px;
 
+  div {
+    svg {
+      fill: ${p => p.theme.colors.dark};
+    }
+  }
+
   .selected {
     div {
       svg {
