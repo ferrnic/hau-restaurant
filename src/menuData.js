@@ -1,4 +1,4 @@
-const carte = [
+export const carte = [
   {
     name: "Potages",
     items: [
@@ -37,6 +37,24 @@ const carte = [
       { name: "Croustillons de scampis", price: 9 },
       { name: "Scampis aux épices", price: 12 },
       { name: "Assiette Hau (2 personnes)", price: 24 },
+    ]
+  },
+];
+
+export const vins = [
+  {
+    name: "champ",
+    items: [
+      { name: "champomy", price: 1 },
+    ]
+  },
+];
+
+export const restaurant = [
+  {
+    name: "adresse",
+    items: [
+      { name: "rue", price: 0 },
     ]
   },
 ];
