@@ -1,6 +1,8 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
+
+import { media, breakpoints } from './../theme';
 
 import Navigation from '../components/Navigation';
 import Carte from '../components/Carte';
@@ -9,10 +11,11 @@ import { carte, vins, restaurant } from '../menuData';
 const Wrapper = styled.div`
   position: relative;  
   width: 100vw;
-  height: 100vh;
+  display: flex;
 `;
 
 const LeftMenu = styled.div`
+  position: relative
   padding: 10px;
   background-color: ${props => props.theme.colors.main};
   position: fixed;
@@ -22,6 +25,23 @@ const LeftMenu = styled.div`
 
   display: flex;
   flex-direction: column;
+`;
+
+const Content = styled.div`
+  position: relative;
+  left: 100px;
+  width: 100%;
+  max-width: calc( 100vw - 100px );
+  
+  background-color: slategray;
+
+  ${media.medium`
+    background-color: lightGrey;
+    max-width: ${props => (props.theme.breakpoints.width.medium - 100)}px;
+  `};
+  ${media.large`
+    background-color: red;
+  `};
 `;
 
 const Logo = styled(Link)`
@@ -49,30 +69,33 @@ const PagesWrapper = ({location, history}) => {
         <Logo to="/" />
         <Navigation />
       </LeftMenu>
-      <Carte
+      <Content>
+        <Carte
+        className=""
         name='carte'
         isCurrent={location.pathname === '/carte'}
         onClick={name => handleClick(name)}
         currentMenu={carte}
-      >
-        carte
-      </Carte>
-      <Carte
+        >
+          carte
+        </Carte>
+        <Carte
         name='restaurant'
         isCurrent={location.pathname === '/restaurant'}
         onClick={name => handleClick(name)}
         currentMenu={restaurant}
-      >
-        restaurant
-      </Carte>
-      <Carte
+        >
+          restaurant
+        </Carte>
+        <Carte
         name='vins'
         isCurrent={location.pathname === '/vins'}
         onClick={name => handleClick(name)}
         currentMenu={vins}
-      >
-        vins
-      </Carte>
+        >
+          vins
+        </Carte>
+      </Content>
       <Slideshow />
     </Wrapper>
   );

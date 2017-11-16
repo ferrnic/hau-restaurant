@@ -4,15 +4,19 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
 `;
   
-const StyledName = styled.span`
-`;
-
-const StyledPice = styled.span`
-`;
 
 const StyledLine = styled.p`
   display: flex;
   justify-content: space-between;
+`;
+
+const StyledName = styled.span`
+`;
+
+const StyledPice = styled.span`
+  align-self: flex-end;
+  padding-left: 30px;
+  font-weight: 600;
 `;
   
 const PageContentSection = (props) => {

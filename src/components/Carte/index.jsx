@@ -3,12 +3,17 @@ import styled from 'styled-components';
 import CarteContent from './CarteContent'
 
 const Wrapper = styled.div`
-  height: 100vh;
-  padding: 50px;
-  color: ${props => props.theme.colors.dark};
-  left: 100px;
   position: absolute;
-  visibility: ${props => props.isCurrent ? 'visible' : 'hidden'};
+  top: 0;
+  width: 100%;
+  padding: 0 50px;
+  color: ${props => props.theme.colors.dark};
+  opacity: ${props => props.isCurrent ? '1' : '0.2'};
+`;
+
+const H1 = styled.h1`
+  font-size: 4em;
+  text-transform: uppercase;
 `;
 
 const Carte = (props) => {
@@ -25,7 +30,7 @@ const Carte = (props) => {
 
   return (
     <Wrapper isCurrent={isCurrent} onClick={handleClick}>
-      <h1>{name}</h1>
+      <H1>{name}</H1>
       <CarteContent content={currentMenu}/>
     </Wrapper>
   );
