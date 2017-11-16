@@ -71,7 +71,6 @@ const PagesWrapper = ({location, history}) => {
       </LeftMenu>
       <Content>
         <Carte
-        className=""
         name='carte'
         isCurrent={location.pathname === '/carte'}
         onClick={name => handleClick(name)}
