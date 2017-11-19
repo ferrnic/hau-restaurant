@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   width: 100%;
   padding: 0 50px;
   color: ${props => props.theme.colors.dark};
-  opacity: ${props => props.isCurrent ? '1' : '0.2'};
+  opacity: ${props => props.isCurrent ? '1' : '0'};
 `;
 
 const H1 = styled.h1`

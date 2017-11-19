@@ -7,6 +7,7 @@ import { media, breakpoints } from './../theme';
 import Navigation from '../components/Navigation';
 import Carte from '../components/Carte';
 import { carte, vins, restaurant } from '../menuData';
+import TextLogo from '../components/TextLogo';
 
 const Wrapper = styled.div`
   position: relative;  
@@ -17,7 +18,6 @@ const Wrapper = styled.div`
 const LeftMenu = styled.div`
   position: relative
   padding: 10px;
-  background-color: ${props => props.theme.colors.main};
   position: fixed;
   left: 0;
   height: 100vh;
@@ -32,23 +32,16 @@ const Content = styled.div`
   left: 100px;
   width: 100%;
   max-width: calc( 100vw - 100px );
-  
-  background-color: slategray;
 
   ${media.medium`
-    background-color: lightGrey;
     max-width: ${props => (props.theme.breakpoints.width.medium - 100)}px;
-  `};
-  ${media.large`
-    background-color: red;
   `};
 `;
 
-const Logo = styled(Link)`
+const LogoWrapper = styled(Link)`
   display: block;
-  height: 100px;
   margin: 10px;
-  background-color: ${props => props.theme.colors.dark};
+  padding: 15px;
 `;
 
 const Slideshow = styled.div`
@@ -66,31 +59,33 @@ const PagesWrapper = ({location, history}) => {
   return (
     <Wrapper>
       <LeftMenu>
-        <Logo to="/" />
+        <LogoWrapper to="/">
+          <TextLogo />
+        </LogoWrapper>
         <Navigation />
       </LeftMenu>
       <Content>
         <Carte
-        name='carte'
-        isCurrent={location.pathname === '/carte'}
-        onClick={name => handleClick(name)}
-        currentMenu={carte}
+          name='carte'
+          isCurrent={location.pathname === '/carte'}
+          onClick={name => handleClick(name)}
+          currentMenu={carte}
         >
           carte
         </Carte>
         <Carte
-        name='restaurant'
-        isCurrent={location.pathname === '/restaurant'}
-        onClick={name => handleClick(name)}
-        currentMenu={restaurant}
+          name='restaurant'
+          isCurrent={location.pathname === '/restaurant'}
+          onClick={name => handleClick(name)}
+          currentMenu={restaurant}
         >
           restaurant
         </Carte>
         <Carte
-        name='vins'
-        isCurrent={location.pathname === '/vins'}
-        onClick={name => handleClick(name)}
-        currentMenu={vins}
+          name='vins'
+          isCurrent={location.pathname === '/vins'}
+          onClick={name => handleClick(name)}
+          currentMenu={vins}
         >
           vins
         </Carte>
