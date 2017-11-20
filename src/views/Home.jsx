@@ -24,19 +24,20 @@ const Wrapper = styled.div`
   width: 90vw;
   max-width: 500px;
   position: relative;
+  left: -15px;
 `;
   
 const StyledLinks = styled(Link)`
   width: 33%;
-  margin: 
+  margin: 2%;
 `;
 
 const SeedWrapper = styled.div`
   width: 100%;
 
   // rotate and shift the seeds
-  ${p => p.rotate && css`${StyledSeed} { transform: rotate(${p.theme.seedRotation[1]}deg); `}
-  ${p => p.translate && css`${HomeSeedWrapper} { transform: translateX(30px) translateY(-5px); `}
+  ${p => p.seedTranslate && css`${HomeSeedWrapper} { transform: translateX(30px) translateY(-5px); `}
+  ${p => p.seedRotate && css`${StyledSeed} { transform: rotate(${p.theme.seedRotation[1]}deg); `}
 `;
 
 const Home = () => (
@@ -60,8 +61,8 @@ const Home = () => (
       </StyledLinks>
       <StyledLinks to='/restaurant'>
         <SeedWrapper
-          rotate
-          translate
+          seedRotate
+          seedTranslate
         >
           <HomeSeed
             SpecificSeed={<Seed />}
