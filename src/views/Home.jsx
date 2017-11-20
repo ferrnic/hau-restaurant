@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import HomeSeed from '../components/HomeSeed';
+import HomeSeed, { Wrapper as HomeSeedWrapper } from '../components/HomeSeed';
 import LetterH from '../components/HomeSeed/LetterH';
 import LetterA from '../components/HomeSeed/LetterA';
 import LetterU from '../components/HomeSeed/LetterU';
-import Seed from '../components/HomeSeed/Seed';
+import Seed, { StyledSeed } from '../components/HomeSeed/Seed';
 
 const BackGround = styled.div`
   position: relative;  
@@ -18,20 +18,25 @@ const BackGround = styled.div`
   align-items: center;
 `;
 
-const StyledLinks = styled(Link)`
-  width: 33%;
-`;
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 90vw;
   max-width: 500px;
   position: relative;
-  `;
+`;
   
-  const SeedWrapper = styled.div`
+const StyledLinks = styled(Link)`
+  width: 33%;
+  margin: 
+`;
+
+const SeedWrapper = styled.div`
   width: 100%;
+
+  // rotate and shift the seeds
+  ${p => p.rotate && css`${StyledSeed} { transform: rotate(${p.theme.seedRotation[1]}deg); `}
+  ${p => p.translate && css`${HomeSeedWrapper} { transform: translateX(30px) translateY(-5px); `}
 `;
 
 const Home = () => (
@@ -40,7 +45,7 @@ const Home = () => (
       <StyledLinks to='/carte'>
         <SeedWrapper>
           <HomeSeed
-            Seed={<Seed />}
+            SpecificSeed={<Seed />}
             Letter={<LetterH />}
           />
         </SeedWrapper>
@@ -48,15 +53,18 @@ const Home = () => (
       <StyledLinks to='/vins'>
         <SeedWrapper>
           <HomeSeed
-            Seed={<Seed />}
+            SpecificSeed={<Seed/>}
             Letter={<LetterA />}
           />
         </SeedWrapper>
       </StyledLinks>
       <StyledLinks to='/restaurant'>
-        <SeedWrapper>
+        <SeedWrapper
+          rotate
+          translate
+        >
           <HomeSeed
-            Seed={<Seed />}
+            SpecificSeed={<Seed />}
             Letter={<LetterU />}
           />
         </SeedWrapper>          

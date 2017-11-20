@@ -11,12 +11,18 @@ const StyledLine = styled.p`
 `;
 
 const StyledName = styled.span`
+  line-height: 1em;
 `;
 
 const StyledPice = styled.span`
   align-self: flex-end;
   padding-left: 30px;
   font-weight: 600;
+`;
+
+const StyledSectionName = styled.h2`
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 `;
   
 const PageContentSection = (props) => {
@@ -26,7 +32,7 @@ const PageContentSection = (props) => {
 
   return (
     <Wrapper>
-      <h4>{sectionContent.name}</h4>
+      <StyledSectionName>{sectionContent.name}</StyledSectionName>
       {sectionContent.items.map((dish) => { 
         return (
           <StyledLine key={dish.name}>

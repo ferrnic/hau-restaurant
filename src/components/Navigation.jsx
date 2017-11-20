@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import HomeSeed from './HomeSeed';
+import HomeSeed, { Wrapper as HomeSeedWrapper } from './HomeSeed';
 import LetterH from '../components/HomeSeed/LetterH';
 import LetterA from '../components/HomeSeed/LetterA';
 import LetterU from '../components/HomeSeed/LetterU';
+import { StyledSeed } from '../components/HomeSeed/Seed';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 5px;
+  padding: 0 15px;
 
   div {
     svg {
@@ -21,7 +22,7 @@ const Wrapper = styled.div`
   .selected {
     div {
       svg {
-        fill: ${p => p.theme.colors.light};
+        fill: ${p => p.theme.colors.main};
       }
     }
   }
@@ -29,37 +30,44 @@ const Wrapper = styled.div`
 
 const StyledLink = styled(NavLink)`
   display: block;
-  div {
-    height: 70px; 
+  ${HomeSeedWrapper} {
+    height: 80px; 
   }
+
+  // rotate and shift the seeds
+  ${p => p.rotate && css`${StyledSeed} { transform: rotate(${p.theme.seedRotation[3]}deg); `}
+  ${p => p.translate && css`${HomeSeedWrapper} { transform: translateX(3px) translateY(-10px); `}
 `;
 
 const Navigation = () => {
   return (
     <Wrapper>
-      <StyledLink 
+      <StyledLink
+        translate 
         activeClassName="selected"
         to='/carte'
       >
-        <HomeSeed Letter={<LetterH />}>
-          carte
-        </HomeSeed>
+        <HomeSeed
+          Letter={<LetterH />}
+        />
       </StyledLink>
-      <StyledLink 
-        activeClassName="selected"
-        to='/restaurant'
-      >
-        <HomeSeed Letter={<LetterA />}>
-        restaurant
-        </HomeSeed>
-      </StyledLink>
-      <StyledLink 
+      <StyledLink
+        rotate 
         activeClassName="selected"
         to='/vins'
       >
-        <HomeSeed Letter={<LetterU />}>
-        vins
-        </HomeSeed>
+        <HomeSeed
+          Letter={<LetterA />}
+        />
+      </StyledLink>
+      <StyledLink
+        rotate
+        activeClassName="selected"
+        to='/restaurant'
+      >
+        <HomeSeed
+          Letter={<LetterU />}
+        />
       </StyledLink>
     </Wrapper>
   );

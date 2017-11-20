@@ -13,6 +13,12 @@ export const theme = {
       large: 992,
     },
   },
+  seedRotation: {
+    0: 0,
+    1: 73,
+    2: 180,
+    3: 253,
+  },
 };
 
 

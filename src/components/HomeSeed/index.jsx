@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Seed from './Seed';
 
-const Wrapper = styled.div`
-  transform: rotate(${p => p.rotation}deg);
+export const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -18,6 +17,7 @@ const Wrapper = styled.div`
     width: 60%;
     opacity: 0;
   }
+
   
   .seed{
   }
@@ -33,7 +33,7 @@ const Wrapper = styled.div`
 `;
 
 const HomeSeed = ({Seed, Letter}) => (
-  <Wrapper >
+  <Wrapper>
     {Seed}
     {Letter}  
   </Wrapper>
