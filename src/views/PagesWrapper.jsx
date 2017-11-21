@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { media } from './../theme';
 
 import Navigation from '../components/Navigation';
+import Slideshow from '../components/Slideshow';
 import Carte from '../components/Carte';
 import { carte, vins, restaurant } from '../menuData';
 import TextLogo from '../components/TextLogo';
@@ -42,11 +43,6 @@ const LogoWrapper = styled(Link)`
   display: block;
   margin: 10px;
   padding: 15px;
-`;
-
-const Slideshow = styled.div`
-  position: absolute;
-  display: none
 `;
 
 const PagesWrapper = ({location, history}) => {
@@ -90,7 +86,7 @@ const PagesWrapper = ({location, history}) => {
           vins
         </Carte>
       </Content>
-      <Slideshow />
+      <Slideshow location={location.pathname} />
     </Wrapper>
   );
 }
