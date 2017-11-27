@@ -6,7 +6,6 @@ const Wrapper = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  padding: 0 50px;
   color: ${props => props.theme.colors.dark};
   opacity: ${props => props.isCurrent ? '1' : '0'};
 `;

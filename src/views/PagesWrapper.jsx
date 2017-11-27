@@ -11,38 +11,34 @@ import { carte, vins, restaurant } from '../menuData';
 import TextLogo from '../components/TextLogo';
 
 const Wrapper = styled.div`
-  position: relative;  
+  height: 100vh;
   width: 100vw;
+  overflow: hidden;
   display: flex;
 `;
 
 const LeftMenu = styled.div`
-  position: relative
-  padding: 10px;
-  position: fixed;
   left: 0;
-  height: 100vh;
-  width: 100px;
+  height: 100%;
+  width: 60px;
 
   display: flex;
   flex-direction: column;
 `;
 
 const Content = styled.div`
-  position: relative;
-  left: 100px;
-  width: 100%;
-  max-width: calc( 100vw - 100px );
+  overflow-y: auto;
+  flex-grow: 0;
+  width: calc( 100vw - 60px );
 
   ${media.medium`
-    max-width: ${props => (props.theme.breakpoints.width.medium - 100)}px;
+    max-width: ${props => (props.theme.breakpoints.width.medium - 60)}px;
   `};
 `;
 
 const LogoWrapper = styled(Link)`
   display: block;
   margin: 10px;
-  padding: 15px;
 `;
 
 const PagesWrapper = ({location, history}) => {

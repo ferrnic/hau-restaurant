@@ -31,12 +31,12 @@ const Wrapper = styled.div`
 const StyledLink = styled(NavLink)`
   display: block;
   ${HomeSeedWrapper} {
-    height: 80px; 
+    height: 40px; 
   }
 
   // rotate and shift the seeds
   ${p => p.rotate && css`${StyledSeed} { transform: rotate(${p.theme.seedRotation[3]}deg); `}
-  ${p => p.translate && css`${HomeSeedWrapper} { transform: translateX(3px) translateY(-10px); `}
+  ${p => p.translate && css`${HomeSeedWrapper} { transform: translateX(3px) translateY(-5px); `}
 `;
 
 const Navigation = () => {

@@ -12,6 +12,7 @@ const StyledLine = styled.p`
 
 const StyledName = styled.span`
   line-height: 1em;
+  text-overflow: ellipsis;  
 `;
 
 const StyledPice = styled.span`
