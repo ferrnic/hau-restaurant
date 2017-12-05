@@ -9,13 +9,22 @@
 # production
 /build
 
-# misc
+# osx
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.DS_Store?
+._*
+.Trashes
 
+# logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ide
+/.idea
+
+# misc
+.env
+package-lock.json
