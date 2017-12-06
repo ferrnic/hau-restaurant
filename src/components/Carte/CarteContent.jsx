@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import PageContentSection from './PageContentSection';
 
-const Wrapper = styled.ul`
+export const Wrapper = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;

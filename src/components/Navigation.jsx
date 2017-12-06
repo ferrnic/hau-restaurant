@@ -11,7 +11,7 @@ import { StyledSeed } from '../components/HomeSeed/Seed';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 30px 0 20px; // slide a bit because svg ar not centered
+  padding: 0 35px 0 20px; // slide a bit because svg ar not centered
 
   div {
     svg {

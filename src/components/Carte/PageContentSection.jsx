@@ -31,7 +31,7 @@ const ItemName = styled.span`
 
 const ItemPrice = styled.span`
   align-self: flex-end;
-  padding-left: 30px;
+  padding: 0 30px;
   font-weight: 600;
 `;
 

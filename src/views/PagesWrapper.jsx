@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import styled from 'styled-components';
 
 import { media } from './../theme';
@@ -11,14 +11,12 @@ import { carte, vins, restaurant } from '../menuData';
 import TextLogo from '../components/TextLogo';
 
 const Wrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
   overflow: hidden;
-  display: flex;
   background-color: ${p => p.theme.colors.light};
 `;
 
 const LeftMenu = styled.div`
+  position: fixed;
   left: 0;
   height: 100%;
   width: 110px;
@@ -28,9 +26,11 @@ const LeftMenu = styled.div`
 `;
 
 const Content = styled.div`
-  overflow-y: auto;
-  flex-grow: 0;
-  width: calc( 100vw - 60px );
+  left: 110px;
+  width: calc( 100vw - 110px );
+  position: relative;
+  min-height: 100vh;
+ 
 
   ${media.medium`
     max-width: ${props => (props.theme.breakpoints.width.medium - 60)}px;
@@ -52,7 +52,7 @@ const LogoWrapper = styled(Link)`
 const PagesWrapper = ({location, history}) => {
   const handleClick = (name) => {
     if (name !== location.pathname.slice(1)) {
-      history.go(`/${name}`)
+      history.go(`/${name}`);
     }
   };
 
@@ -90,7 +90,7 @@ const PagesWrapper = ({location, history}) => {
           vins
         </Carte>
       </Content>
-      <Slideshow location={location.pathname} />
+      {/* <Slideshow location={location.pathname} /> */}
     </Wrapper>
   );
 };
