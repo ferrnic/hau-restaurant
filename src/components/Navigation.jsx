@@ -33,11 +33,15 @@ const SeedLink = styled(NavLink)`
   ${HomeSeedWrapper} {
     height: 40px; 
   }
-  transform: rotate(${p => p.theme.seedRotation[3]}deg);
+  .seed {
+    transform: rotate(${p => p.theme.seedRotation[3]}deg);
+  }
 `;
 
-const FirstSeedLink = StyledSeed.extend`
-  transform: translateX(3px) translateY(-5px);
+const FirstSeedLink = SeedLink.extend`
+  .seed {
+    transform: rotate(0deg) translateX(3px) translateY(-5px);
+  }
 `;
 
 const Navigation = () => {
