@@ -15,12 +15,13 @@ const Wrapper = styled.div`
   width: 100vw;
   overflow: hidden;
   display: flex;
+  background-color: ${p => p.theme.colors.light};
 `;
 
 const LeftMenu = styled.div`
   left: 0;
   height: 100%;
-  width: 60px;
+  width: 110px;
 
   display: flex;
   flex-direction: column;
@@ -38,7 +39,14 @@ const Content = styled.div`
 
 const LogoWrapper = styled(Link)`
   display: block;
-  margin: 10px;
+  padding: 40px 25px 0;
+  svg {
+    ${p => p.theme.transitions};
+    fill: ${p => p.theme.colors.dark};
+    &:hover{
+      fill: ${p => p.theme.colors.main};  
+    }
+  }
 `;
 
 const PagesWrapper = ({location, history}) => {

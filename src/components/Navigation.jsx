@@ -11,7 +11,7 @@ import { StyledSeed } from '../components/HomeSeed/Seed';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
+  padding: 0 30px 0 20px; // slide a bit because svg ar not centered
 
   div {
     svg {
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 const SeedLink = styled(NavLink)`
   display: block;
   ${HomeSeedWrapper} {
-    height: 40px; 
+    padding-top: 100%;
   }
   .seed {
     transform: rotate(${p => p.theme.seedRotation[3]}deg);

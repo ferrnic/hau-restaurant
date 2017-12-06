@@ -11,8 +11,11 @@ const Wrapper = styled.div`
 `;
 
 const H1 = styled.h1`
-  font-size: 4em;
+  font-size: 2.5em;
+  line-height: 0.7em;
+  text-overflow: ellipsis;
   text-transform: uppercase;
+  margin-top: 40px;
 `;
 
 const Carte = (props) => {

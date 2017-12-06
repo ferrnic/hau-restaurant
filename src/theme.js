@@ -1,5 +1,10 @@
 import { css } from 'styled-components';
 
+const transitions = css`
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+`;
+
 export const theme = {
   colors: {
     main: '#E81835',
@@ -19,8 +24,8 @@ export const theme = {
     2: 180,
     3: 253,
   },
+  transitions: transitions,
 };
-
 
 // Iterate through the theme.breakpoints and create a media template
 export const media = Object.keys(theme.breakpoints.width).reduce((acc, label) => {

@@ -13,20 +13,19 @@ export const Wrapper = styled.div`
     position: absolute;
   }
   
-  .letter{
+  .letter {
     width: 60%;
     opacity: 0;
   }
-
   
-  .seed{
+  .seed {
   }
 
-  &:hover{
-    .seed{
+  &:hover {
+    .seed {
       opacity: 0;
     }
-    .letter{
+    .letter {
       opacity: 1;
     }
   }
