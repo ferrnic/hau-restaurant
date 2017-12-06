@@ -113,7 +113,7 @@ export const carte = [
       { name: "Beignet de banane au miel", price: 8 },
       { name: "Assortiment de sorbet", price: 7.50 },
   
-    { name: "Supplément de 2,50 euros pour un flambage à l’alcool" },
+    { name: "Supplément de 2,50 euros pour un flambage à l’alcool", price: 0 },
     ],
   },{
     name: "Boissons",
@@ -143,7 +143,7 @@ export const carte = [
   },{
     name: "Info allergènes",
     items: [
-      { name: "Chers clients, si vous désirez des informations sur la présence éventuelle d’allergène dans nos produits / préparations veuillez contacter le personnel. Attention la composition des produits et préparations, peut varier. Merci" },
+      { name: "Chers clients, si vous désirez des informations sur la présence éventuelle d’allergène dans nos produits / préparations veuillez contacter le personnel. Attention la composition des produits et préparations, peut varier. Merci", price: 0 },
     ],
   }
 ];

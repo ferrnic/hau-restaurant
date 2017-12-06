@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import HomeSeed, { Wrapper as HomeSeedWrapper } from './HomeSeed';
 import LetterH from '../components/HomeSeed/LetterH';
@@ -28,49 +28,47 @@ const Wrapper = styled.div`
   }
 `;
 
-const StyledLink = styled(NavLink)`
+const SeedLink = styled(NavLink)`
   display: block;
   ${HomeSeedWrapper} {
     height: 40px; 
   }
+  transform: rotate(${p => p.theme.seedRotation[3]}deg);
+`;
 
-  // rotate and shift the seeds
-  ${p => p.rotate && css`${StyledSeed} { transform: rotate(${p.theme.seedRotation[3]}deg); `}
-  ${p => p.translate && css`${HomeSeedWrapper} { transform: translateX(3px) translateY(-5px); `}
+const FirstSeedLink = StyledSeed.extend`
+  transform: translateX(3px) translateY(-5px);
 `;
 
 const Navigation = () => {
   return (
     <Wrapper>
-      <StyledLink
-        translate 
+      <FirstSeedLink
         activeClassName="selected"
         to='/carte'
       >
         <HomeSeed
           Letter={<LetterH />}
         />
-      </StyledLink>
-      <StyledLink
-        rotate 
+      </FirstSeedLink>
+      <SeedLink
         activeClassName="selected"
         to='/vins'
       >
         <HomeSeed
           Letter={<LetterA />}
         />
-      </StyledLink>
-      <StyledLink
-        rotate
+      </SeedLink>
+      <SeedLink
         activeClassName="selected"
         to='/restaurant'
       >
         <HomeSeed
           Letter={<LetterU />}
         />
-      </StyledLink>
+      </SeedLink>
     </Wrapper>
   );
-}
+};
 
 export default Navigation;

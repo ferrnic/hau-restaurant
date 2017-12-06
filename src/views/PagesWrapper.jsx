@@ -46,7 +46,7 @@ const PagesWrapper = ({location, history}) => {
     if (name !== location.pathname.slice(1)) {
       history.go(`/${name}`)
     }
-  }
+  };
 
   return (
     <Wrapper>
@@ -85,6 +85,6 @@ const PagesWrapper = ({location, history}) => {
       <Slideshow location={location.pathname} />
     </Wrapper>
   );
-}
+};
 
 export default PagesWrapper;

@@ -28,6 +28,6 @@ export const media = Object.keys(theme.breakpoints.width).reduce((acc, label) =>
     @media (min-width: ${theme.breakpoints.width[label] / 16}em) {
       ${css(...args)}
     }
-  `
+  `;
   return acc
 }, {});

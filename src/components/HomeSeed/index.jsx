@@ -35,17 +35,17 @@ export const Wrapper = styled.div`
 const HomeSeed = ({Seed, Letter}) => (
   <Wrapper>
     {Seed}
-    {Letter}  
+    {Letter}
   </Wrapper>
 );
 
 HomeSeed.propTypes = {
   Seed: PropTypes.element,
   Letter: PropTypes.element.isRequired,
-}
+};
 
 HomeSeed.defaultProps = {
   Seed: <Seed />,
-}
+};
 
 export default HomeSeed;

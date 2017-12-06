@@ -29,7 +29,7 @@ const ItemName = styled.span`
   text-overflow: ellipsis;  
 `;
 
-const ItemPice = styled.span`
+const ItemPrice = styled.span`
   align-self: flex-end;
   padding-left: 30px;
   font-weight: 600;
@@ -48,13 +48,13 @@ const PageContentSection = (props) => {
           return (
             <ItemLine key={dish.name}>
               <ItemName>{dish.name}</ItemName>
-              <ItemPice>{dish.price}</ItemPice>
+              <ItemPrice>{dish.price}</ItemPrice>
             </ItemLine>
           )
         })}
       </Items>
     </Wrapper>
   );
-}
+};
 
 export default PageContentSection;

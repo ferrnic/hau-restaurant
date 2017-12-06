@@ -15,6 +15,7 @@ max-height: 200px;
 
 padding: 20px;
 background-color: turquoise;
+border: 20px solid red;
 `;
 
 const Wrapper = styled.div`
@@ -67,6 +68,6 @@ const Slideshow = (props) => {
       </Slider>
     </Wrapper>
   );
-}
+};
 
 export default Slideshow;
