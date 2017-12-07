@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { media } from './../theme';
 
@@ -10,9 +10,55 @@ import Carte from '../components/Carte';
 import { carte, vins, restaurant } from '../menuData';
 import TextLogo from '../components/TextLogo';
 
+const initialBorderCss = css`
+  @media (max-width: 800px) {
+    display: none;
+  }
+  background-color: ${p => p.theme.colors.dark};
+  position: fixed;
+  z-index: 10;
+`;
+
+const leftRightCss = css`
+  top: 0;
+  bottom: 0;
+  width: 20px;
+`;
+
+const TopBottom = css`
+  left: 0;
+  right: 0;
+  height: 20px;
+`;
+
+const BorderLeft = styled.div`
+  ${initialBorderCss}
+  ${leftRightCss}
+  left: 0;
+`;
+const BorderRight = styled.div`
+  ${initialBorderCss}
+  ${leftRightCss}
+  right: 0;
+`;
+const BorderTop = styled.div`
+  ${initialBorderCss}
+  ${TopBottom}
+  top: 0;
+`;
+const BorderBottom = styled.div`
+  ${initialBorderCss}
+  ${TopBottom}
+  bottom: 0;
+`;
+
 const Wrapper = styled.div`
   overflow: hidden;
   background-color: ${p => p.theme.colors.light};
+  &::before {
+    content: "";
+    
+  }
 `;
 
 const LeftMenu = styled.div`
@@ -30,11 +76,10 @@ const Content = styled.div`
   width: calc( 100vw - 110px );
   position: relative;
   min-height: 100vh;
- 
-
-  ${media.medium`
-    max-width: ${props => (props.theme.breakpoints.width.medium - 60)}px;
-  `};
+ background-color: aliceblue;
+  @media (min-width: 800px) {
+    max-width: calc(800px - 110px);
+  }
 `;
 
 const LogoWrapper = styled(Link)`
@@ -58,6 +103,10 @@ const PagesWrapper = ({location, history}) => {
 
   return (
     <Wrapper>
+      <BorderLeft />
+      <BorderRight />
+      <BorderTop />
+      <BorderBottom />
       <LeftMenu>
         <LogoWrapper to="/">
           <TextLogo />

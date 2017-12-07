@@ -23,7 +23,15 @@ const H1 = styled.h1`
   line-height: 0.7em;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  margin-top: 40px;
+  margin: 40px 0 1.5em;
+  
+  @media (min-width: 600px) {
+    font-size: 3.5em;
+  }
+   
+  @media (min-width: 800px) {
+    font-size: 4.5em;
+  }
 `;
 
 const Carte = (props) => {
@@ -33,7 +41,7 @@ const Carte = (props) => {
     isCurrent,
     currentMenu,
   } = props;
-  
+
   const handleClick = () => {
     onClick(name)
   };
