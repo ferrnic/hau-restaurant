@@ -6,7 +6,6 @@ import HomeSeed, { Wrapper as HomeSeedWrapper } from './HomeSeed';
 import LetterH from '../components/HomeSeed/LetterH';
 import LetterA from '../components/HomeSeed/LetterA';
 import LetterU from '../components/HomeSeed/LetterU';
-import { StyledSeed } from '../components/HomeSeed/Seed';
 
 const Wrapper = styled.div`
   display: flex;
