@@ -1,55 +1,56 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import styled, { css } from 'styled-components';
-
-import { media } from './../theme';
+import { Link } from "react-router-dom";
+import styled from 'styled-components';
 
 import Navigation from '../components/Navigation';
-import Slideshow from '../components/Slideshow';
 import Carte from '../components/Carte';
 import { carte, vins, restaurant } from '../menuData';
 import TextLogo from '../components/TextLogo';
+import { PageBorders } from "../components/PageBorders";
 
-const initialBorderCss = css`
-  @media (max-width: 800px) {
-    display: none;
+const SlideshowWrapper = styled.div`
+  background-color: dodgerblue;
+  
+  display: none;
+  position: relative;
+  height: calc(100vh - 40px);
+  
+  @media (min-width: 800px) {
+    display: block;
+    flex-grow: 1; // grows as much as space left
+  }  
+`;
+
+const LeftMenu = styled.div`
+  background-color: ghostwhite;
+  
+  position: relative;
+  width: 110px;
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 800px) {
+    height: calc(100vh - 40px);
+  }  
+  flex-shrink: 0; // does not shrink
+`;
+
+const Content = styled.div`
+  background-color: aliceblue;
+  
+  position: relative;
+  height: 100vh;
+  width: calc(100vw - 110px);
+  overflow-y: auto;
+  flex-shrink: 0; // does not shrink
+  
+  @media (min-width: 800px) {
+    height: calc(100vh - 40px);
+    width: 50vw;
+    max-width: 550px;
   }
-  background-color: ${p => p.theme.colors.dark};
-  position: fixed;
-  z-index: 10;
-`;
-
-const leftRightCss = css`
-  top: 0;
-  bottom: 0;
-  width: 20px;
-`;
-
-const TopBottom = css`
-  left: 0;
-  right: 0;
-  height: 20px;
-`;
-
-const BorderLeft = styled.div`
-  ${initialBorderCss}
-  ${leftRightCss}
-  left: 0;
-`;
-const BorderRight = styled.div`
-  ${initialBorderCss}
-  ${leftRightCss}
-  right: 0;
-`;
-const BorderTop = styled.div`
-  ${initialBorderCss}
-  ${TopBottom}
-  top: 0;
-`;
-const BorderBottom = styled.div`
-  ${initialBorderCss}
-  ${TopBottom}
-  bottom: 0;
 `;
 
 const Wrapper = styled.div`
@@ -57,28 +58,12 @@ const Wrapper = styled.div`
   background-color: ${p => p.theme.colors.light};
   &::before {
     content: "";
-    
   }
-`;
-
-const LeftMenu = styled.div`
-  position: fixed;
-  left: 0;
-  height: 100%;
-  width: 110px;
-
   display: flex;
-  flex-direction: column;
-`;
-
-const Content = styled.div`
-  left: 110px;
-  width: calc( 100vw - 110px );
-  position: relative;
-  min-height: 100vh;
- background-color: aliceblue;
+  align-items: stretch;
+  
   @media (min-width: 800px) {
-    max-width: calc(800px - 110px);
+    padding: 20px;
   }
 `;
 
@@ -103,10 +88,7 @@ const PagesWrapper = ({location, history}) => {
 
   return (
     <Wrapper>
-      <BorderLeft />
-      <BorderRight />
-      <BorderTop />
-      <BorderBottom />
+      <PageBorders />
       <LeftMenu>
         <LogoWrapper to="/">
           <TextLogo />
@@ -139,6 +121,12 @@ const PagesWrapper = ({location, history}) => {
           vins
         </Carte>
       </Content>
+      <SlideshowWrapper>
+        lalalala lalalala lalalala 1
+        lalalala lalalala lalalala 2
+        lalalala lalalala lalalala 3
+        lalalala lalalala lalalala 4
+      </SlideshowWrapper>
       {/* <Slideshow location={location.pathname} /> */}
     </Wrapper>
   );

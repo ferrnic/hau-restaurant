@@ -15,7 +15,10 @@ const Wrapper = styled.div`
       position: relative;
       height: auto;
     }
-  `}
+  `};
+  @media (min-width: 800px) {
+    
+  }
   `;
 
 const H1 = styled.h1`
@@ -30,6 +33,10 @@ const H1 = styled.h1`
   }
    
   @media (min-width: 800px) {
+    font-size: 4em;
+  }   
+  
+  @media (min-width: 1000px) {
     font-size: 4.5em;
   }
 `;

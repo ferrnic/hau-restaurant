@@ -173,7 +173,7 @@ export const vins = [
       { name: "Love Over Money Basca", price: 2013 },
     ]
   },{
-    name: "UnitedStates",
+    name: "United States",
     items: [
       { name: "Robert Mondavi Twin Oaks Shiraz", price: 2013 },
       { name: "Bully Hill Vineyards Love My Goat", price: 2012 },
