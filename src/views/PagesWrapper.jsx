@@ -6,11 +6,9 @@ import Navigation from '../components/Navigation';
 import Carte from '../components/Carte';
 import { carte, vins, restaurant } from '../menuData';
 import TextLogo from '../components/TextLogo';
-import { PageBorders } from "../components/PageBorders";
+import SliderMD from "../components/Slideshow/SliderMD";
 
 const SlideshowWrapper = styled.div`
-  background-color: dodgerblue;
-  
   display: none;
   position: relative;
   height: calc(100vh - 40px);
@@ -22,7 +20,6 @@ const SlideshowWrapper = styled.div`
 `;
 
 const LeftMenu = styled.div`
-  background-color: ghostwhite;
   
   position: relative;
   width: 110px;
@@ -38,8 +35,6 @@ const LeftMenu = styled.div`
 `;
 
 const Content = styled.div`
-  background-color: aliceblue;
-  
   position: relative;
   height: 100vh;
   width: calc(100vw - 110px);
@@ -49,7 +44,7 @@ const Content = styled.div`
   @media (min-width: 800px) {
     height: calc(100vh - 40px);
     width: 50vw;
-    max-width: 550px;
+    max-width: 420px;
   }
 `;
 
@@ -61,10 +56,9 @@ const Wrapper = styled.div`
   }
   display: flex;
   align-items: stretch;
-  
+ 
   @media (min-width: 800px) {
-    padding: 20px;
-  }
+    }
 `;
 
 const LogoWrapper = styled(Link)`
@@ -88,7 +82,7 @@ const PagesWrapper = ({location, history}) => {
 
   return (
     <Wrapper>
-      <PageBorders />
+      {/*<PageBorders />*/}
       <LeftMenu>
         <LogoWrapper to="/">
           <TextLogo />
@@ -122,10 +116,7 @@ const PagesWrapper = ({location, history}) => {
         </Carte>
       </Content>
       <SlideshowWrapper>
-        lalalala lalalala lalalala 1
-        lalalala lalalala lalalala 2
-        lalalala lalalala lalalala 3
-        lalalala lalalala lalalala 4
+        <SliderMD />
       </SlideshowWrapper>
       {/* <Slideshow location={location.pathname} /> */}
     </Wrapper>
