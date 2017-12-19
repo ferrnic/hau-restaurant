@@ -26,13 +26,13 @@ const ItemLine = styled.li`
 `;
 
 const ItemName = styled.span`
-  text-overflow: ellipsis;  
+  text-overflow: ellipsis;
 `;
 
 const ItemPrice = styled.span`
   align-self: flex-end;
   padding: 0 30px;
-  font-weight: 600;
+  //font-weight: 600;
 `;
 
 const PageContentSection = (props) => {
