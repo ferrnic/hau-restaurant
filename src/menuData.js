@@ -206,7 +206,12 @@ export const restaurant = [
   {
     name: "adresse",
     items: [
-      { name: "rue", price: 0 },
+      { name: "Bienvenue chez Hau. \n" +
+      "Vietnamien d’origine, chez Hau on y mange sa cuisine.\n" +
+      "Dans ce cadre unique rempli de saveurs et d’histoire, le chef vous propose une convivialité bien à lui : \n" +
+      "une cuisine fine aux saveurs asiatiques, fraîche, et toujours repensée, \n" +
+      "accompagnée d’une belle carte de vin biologique et naturelle. \n" +
+      "Un voyage gastronomique proposé à midi comme au soir.", price: 0 },
     ]
   },
 ];
