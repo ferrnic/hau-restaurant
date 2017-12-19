@@ -22,22 +22,25 @@ const Wrapper = styled.div`
   `;
 
 const H1 = styled.h1`
-  font-size: 2.5em;
-  line-height: 0.7em;
+  font-size: 2em;
+  overflow-y: hidden;
+  line-height: 0.8em;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  margin: 40px 0 1.5em;
+  margin-bottom: 1.2em;
+  letter-spacing: 0.15em;
+  margin-top: 105px;
   
   @media (min-width: 600px) {
-    font-size: 3.5em;
+    font-size: 48px;
   }
    
   @media (min-width: 800px) {
-    font-size: 4em;
+    //font-size: 4em;
   }   
   
   @media (min-width: 1000px) {
-    font-size: 4.5em;
+    //font-size: 4.5em;
   }
 `;
 
@@ -59,6 +62,6 @@ const Carte = (props) => {
       <CarteContent content={currentMenu}/>
     </Wrapper>
   );
-}
+};
 
 export default Carte;
