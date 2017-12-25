@@ -32,6 +32,13 @@ const SliderMD = () => {
     <Wrapper onClick={handleClick}>
       <Slider {...settings}>
         <StyledImage publicId="Capture_d_écran_2017-12-06_à_21.50.13_ftrcx0.png" />
+        {/*{this.state.galleries.restaurant[0] &&*/}
+        {/*<Image*/}
+        {/*publicId={this.state.galleries.restaurant[0].public_id}*/}
+        {/*crop="fill"*/}
+        {/*dpr="auto"*/}
+        {/*responsive*/}
+        {/*/>}*/}
       </Slider>
     </Wrapper>
   );
