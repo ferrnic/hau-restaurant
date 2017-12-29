@@ -16,7 +16,7 @@ class App extends React.Component {
       galleries: {
         restaurant: [],
         carte: [],
-        vin: [],
+        vins: [],
       }
     }
   }
@@ -43,14 +43,16 @@ class App extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Router>
-          <CloudinaryContext
-            cloudName="hau"
-            width="auto"
-          >
+          <CloudinaryContext cloudName="hau">
             <Switch>
               <Route
                 path="/:path(carte|vins|restaurant)"
-                component={PagesWrapper}
+                render={({ location }) => (
+                  <PagesWrapper
+                    location={location}
+                    galleries={this.state.galleries}
+                  />
+                )}
               />
               <Route
                 path="/"

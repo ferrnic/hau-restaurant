@@ -11,9 +11,8 @@ import SliderMD from "../components/Slideshow/SliderMD";
 const SlideshowWrapper = styled.div`
   display: none;
   position: relative;
-  height: calc(100vh - 40px);
   
-  @media (min-width: 800px) {
+  @media (min-width: 530px) {
     display: block;
     flex-grow: 1; // grows as much as space left
   }  
@@ -27,10 +26,6 @@ const LeftMenu = styled.div`
   
   display: flex;
   flex-direction: column;
-
-  @media (min-width: 800px) {
-    height: calc(100vh - 40px);
-  }  
   flex-shrink: 0; // does not shrink
 `;
 
@@ -41,9 +36,9 @@ const Content = styled.div`
   overflow-y: auto;
   flex-shrink: 0; // does not shrink
   
-  @media (min-width: 800px) {
-    height: calc(100vh - 40px);
+  @media (min-width: 530px) {
     width: 50vw;
+    min-width: 420px;
     max-width: 420px;
   }
 `;
@@ -56,9 +51,6 @@ const Wrapper = styled.div`
   }
   display: flex;
   align-items: stretch;
- 
-  @media (min-width: 800px) {
-    }
 `;
 
 const LogoWrapper = styled(Link)`
@@ -73,13 +65,7 @@ const LogoWrapper = styled(Link)`
   }
 `;
 
-const PagesWrapper = ({location, history}) => {
-  const handleClick = (name) => {
-    if (name !== location.pathname.slice(1)) {
-      history.go(`/${name}`);
-    }
-  };
-
+const PagesWrapper = ({location, galleries }) => {
   return (
     <Wrapper>
       {/*<PageBorders />*/}
@@ -93,32 +79,25 @@ const PagesWrapper = ({location, history}) => {
         <Carte
           name='carte'
           isCurrent={location.pathname === '/carte'}
-          onClick={name => handleClick(name)}
           currentMenu={carte}
-        >
-          carte
-        </Carte>
+          gallery={galleries.carte}
+        />
         <Carte
           name='restaurant'
           isCurrent={location.pathname === '/restaurant'}
-          onClick={name => handleClick(name)}
           currentMenu={restaurant}
-        >
-          restaurant
-        </Carte>
+          gallery={galleries.restaurant}
+        />
         <Carte
           name='vins'
           isCurrent={location.pathname === '/vins'}
-          onClick={name => handleClick(name)}
           currentMenu={vins}
-        >
-          vins
-        </Carte>
+
+        />
       </Content>
       <SlideshowWrapper>
-        <SliderMD />
+        <SliderMD gallery={galleries[location.pathname.slice(1)]}/>
       </SlideshowWrapper>
-      {/* <Slideshow location={location.pathname} /> */}
     </Wrapper>
   );
 };

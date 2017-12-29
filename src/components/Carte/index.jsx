@@ -47,17 +47,12 @@ const H1 = styled.h1`
 const Carte = (props) => {
   const {
     name,
-    onClick,
     isCurrent,
     currentMenu,
   } = props;
 
-  const handleClick = () => {
-    onClick(name)
-  };
-
   return (
-    <Wrapper isCurrent={isCurrent} onClick={handleClick}>
+    <Wrapper isCurrent={isCurrent}>
       <H1>{name}</H1>
       <CarteContent content={currentMenu}/>
     </Wrapper>

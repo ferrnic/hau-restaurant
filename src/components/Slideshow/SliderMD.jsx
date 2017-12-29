@@ -20,10 +20,11 @@ const StyledImage = styled.div`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.div`
-  background-color: cadetblue;
+  background-color: ${p => p.theme.colors.dark};
   height: 100%;
   width: 100%;
 `;
