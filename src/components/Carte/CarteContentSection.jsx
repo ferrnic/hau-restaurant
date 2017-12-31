@@ -40,7 +40,7 @@ const ItemPrice = styled.span`
   //font-weight: 600;
 `;
 
-const PageContentSection = (props) => {
+const CarteContentSection = (props) => {
   const {
     sectionContent
   } = props;
@@ -62,4 +62,4 @@ const PageContentSection = (props) => {
   );
 };
 
-export default PageContentSection;
+export default CarteContentSection;

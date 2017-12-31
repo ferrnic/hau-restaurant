@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import PageContentSection from './PageContentSection';
+import CarteContentSection from './CarteContentSection';
 
 export const Wrapper = styled.ul`
   list-style-type: none;
@@ -18,7 +18,7 @@ const CarteContent = (props) => {
     <Wrapper>
       {content.map((section) => { 
         return (
-          <PageContentSection
+          <CarteContentSection
             key={section.name}
             sectionContent={section}
           />
