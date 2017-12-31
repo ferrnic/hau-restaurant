@@ -10,13 +10,8 @@
     - espacer les graines
     - retirer les lettres
     - graine bouge légèrement
-- restaurant:
-    - lien facebook
-    - lien téléphone
-    - crédit en petit en bas 
 
 # Next
-- scrollbar du menu : garder ou enlever ?
 - Accueil: video en fond: saison en cours
   
 # on hold

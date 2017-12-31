@@ -9,7 +9,7 @@ const Link = styled.a`
 
 const Credit = styled(ContentSection)`
   margin-top: 50px;
-  font-size: 12px;
+  font-size: 10px;
   opacity: 0.7;
 `;
 
