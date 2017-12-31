@@ -34,6 +34,7 @@ const Content = styled.div`
   width: calc(100vw - 110px);
   overflow-y: scroll;
   flex-shrink: 0; // does not shrink
+  padding-bottom: 30px;
   
   @media (min-width: ${p => p.theme.breakpoints.medium.viewMinWidth}px) {
     width: 50vw;

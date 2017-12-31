@@ -143,7 +143,7 @@ export const carte = [
   },{
     name: "Info allergènes",
     items: [
-      { name: "Chers clients, si vous désirez des informations sur la présence éventuelle d’allergène dans nos produits / préparations veuillez contacter le personnel. Attention la composition des produits et préparations, peut varier. Merci" },
+      { name: "Chers clients, si vous désirez des informations sur la présence éventuelle d’allergène dans nos produits / préparations veuillez contacter le personnel. Attention la composition des produits et préparations, peut varier. Merci." },
     ],
   }
 ];
