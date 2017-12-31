@@ -113,7 +113,7 @@ export const carte = [
       { name: "Beignet de banane au miel", price: 8 },
       { name: "Assortiment de sorbet", price: 7.50 },
   
-    { name: "Supplément de 2,50 euros pour un flambage à l’alcool", price: 0 },
+    { name: "Supplément de 2,50 euros pour un flambage à l’alcool" },
     ],
   },{
     name: "Boissons",
@@ -143,12 +143,12 @@ export const carte = [
   },{
     name: "Info allergènes",
     items: [
-      { name: "Chers clients, si vous désirez des informations sur la présence éventuelle d’allergène dans nos produits / préparations veuillez contacter le personnel. Attention la composition des produits et préparations, peut varier. Merci", price: 0 },
+      { name: "Chers clients, si vous désirez des informations sur la présence éventuelle d’allergène dans nos produits / préparations veuillez contacter le personnel. Attention la composition des produits et préparations, peut varier. Merci" },
     ],
   }
 ];
 
-export const vins = [
+export const WIPvins = [
   {
     name: "les Bulles",
     items: [
@@ -188,16 +188,19 @@ export const vins = [
   },
 ];
 
+export const vins = [
+  {
+    items: [
+      { name: "La carte de vin biologique et naturelle est à découvrir au restaurant."},
+    ]
+  },
+];
+
 export const restaurant = [
   {
     name: "adresse",
     items: [
-      { name: "Bienvenue chez Hau. \n" +
-      "Vietnamien d’origine, chez Hau on y mange sa cuisine.\n" +
-      "Dans ce cadre unique rempli de saveurs et d’histoire, le chef vous propose une convivialité bien à lui : \n" +
-      "une cuisine fine aux saveurs asiatiques, fraîche, et toujours repensée, \n" +
-      "accompagnée d’une belle carte de vin biologique et naturelle. \n" +
-      "Un voyage gastronomique proposé à midi comme au soir.", price: 0 },
+      { name: "Bienvenue chez Hau. Vietnamien d’origine, chez Hau on y mange sa cuisine Dans ce cadre unique rempli de saveurs et d’histoire, le chef vous propose une convivialité bien à lui : une cuisine fine aux saveurs asiatiques, fraîche, et toujours repensée, accompagnée d’une belle carte de vin biologique et naturelle. Un voyage gastronomique proposé à midi comme au soir."},
     ]
   },
 ];
