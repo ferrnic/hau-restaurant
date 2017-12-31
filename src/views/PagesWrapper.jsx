@@ -4,10 +4,9 @@ import styled from 'styled-components';
 
 import Navigation from '../components/Navigation';
 import Carte from '../components/Carte';
-import { carte, vins, restaurant } from '../menuData';
+import { carte, vins } from '../menuData';
 import TextLogo from '../components/TextLogo';
 import SliderMD from "../components/Slideshow/SliderMD";
-import Home from "./Home";
 import RestaurantCarte from "../components/Carte/RestaurantCarte";
 
 const SlideshowWrapper = styled.div`

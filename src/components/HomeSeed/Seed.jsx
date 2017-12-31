@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 export const StyledSeed = styled.svg``;
 
+// const onClick = () => {
+//   console.log('seed clicked')
+// }
+
 const Seed = () => (
   <StyledSeed
     className="seed"
@@ -16,6 +20,6 @@ const Seed = () => (
       <path d="M3.6,53.3c0,0,71-11.3,51.4-38.1S3.6,53.3,3.6,53.3z"/>
     </g>
   </StyledSeed>
-)
+);
 
 export default Seed;

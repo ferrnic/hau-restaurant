@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Image, Transformation} from "cloudinary-react";
 import cloudinary from 'cloudinary-core';
 
 const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
@@ -65,6 +64,6 @@ class SliderMD extends React.Component {
       </Wrapper>
     );
   }
-};
+}
 
 export default SliderMD;

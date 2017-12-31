@@ -83,12 +83,12 @@ const Carte = (props) => {
     <Wrapper>
       <H1>{name}</H1>
       <Content>
-        {currentMenu.map((section) =>
-          <ContentSection key={section.name}>
+        {currentMenu.map((section, index) =>
+          <ContentSection key={index}>
             <SectionName>{section.name}</SectionName>
             <Items>
-              {section.items.map((dish) =>
-                <ItemLine key={dish.name}>
+              {section.items.map((dish, index) =>
+                <ItemLine key={index}>
                   <ItemName>{dish.name}</ItemName>
                   <ItemPrice>{dish.price}</ItemPrice>
                 </ItemLine>
