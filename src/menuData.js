@@ -198,9 +198,25 @@ export const vins = [
 
 export const restaurant = [
   {
-    name: "adresse",
     items: [
-      { name: "Bienvenue chez Hau. Vietnamien d’origine, chez Hau on y mange sa cuisine Dans ce cadre unique rempli de saveurs et d’histoire, le chef vous propose une convivialité bien à lui : une cuisine fine aux saveurs asiatiques, fraîche, et toujours repensée, accompagnée d’une belle carte de vin biologique et naturelle. Un voyage gastronomique proposé à midi comme au soir."},
+      { name: "Bienvenue chez Hau." },
+      { name: "Vietnamien d’origine, chez Hau on y mange sa cuisine. Dans ce cadre unique rempli de saveurs et d’histoire, le chef vous propose une convivialité bien à lui : une cuisine fine aux saveurs asiatiques, fraîche, et toujours repensée, accompagnée d’une belle carte de vin biologique et naturelle. Un voyage gastronomique proposé à midi comme au soir." },
+    ]
+  },{
+    name: "Horaires",
+    items: [
+      { name: "Fermé le mardi, le mercredi, et le samedi midi." },
+    ]
+  },{
+    name: "Contact",
+    items: [
+      { name: "+32 2 762 99 80" },
+      { name: "www.facebook.com/haurestaurant" },
+    ]
+  },{
+    name: "Adresse",
+    items: [
+      { name: "Avenue Salomé 1 - 1150 Woluwe-saint-pierre" },
     ]
   },
 ];

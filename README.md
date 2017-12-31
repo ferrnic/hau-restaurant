@@ -1,6 +1,5 @@
 # TODO
-- Accueil:
-    - video en fond: saison en cours
+- Accueil : centrage des graine mobile
 - Photos:
     - version desktop
     - version mobile
@@ -9,11 +8,15 @@
     - retirer les lettres
     - graine bouge légèrement
 - restaurant:
-    - ouvertures + carte
+    - carte
+    - lien facebook
+    - lien téléphone
     - crédit en petit en bas 
-    - réduire encore un peu la taille (?)
-- vins: MAJ datas
+
+# Next
 - scrollbar du menu : garder ou enlever ?
-- enlever les 0 euros
-- restaura,t: retour à la ligne après "bienvenue chez hau"
-marge en dessous de "restaurant" trop grande
+- Accueil: video en fond: saison en cours
+  
+# on hold
+- carte des vins
+- Restaurant: réduire encore un peu la taille (?)
