@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import {Link, Route, Switch} from "react-router-dom";
 import styled from 'styled-components';
 
 import Navigation from '../components/Navigation';
@@ -7,6 +7,8 @@ import Carte from '../components/Carte';
 import { carte, vins, restaurant } from '../menuData';
 import TextLogo from '../components/TextLogo';
 import SliderMD from "../components/Slideshow/SliderMD";
+import Home from "./Home";
+import RestaurantCarte from "../components/Carte/RestaurantCarte";
 
 const SlideshowWrapper = styled.div`
   display: none;
@@ -76,24 +78,38 @@ const PagesWrapper = ({location, galleries }) => {
         <Navigation />
       </LeftMenu>
       <Content>
-        <Carte
-          name='carte'
-          isCurrent={location.pathname === '/carte'}
-          currentMenu={carte}
-          gallery={galleries.carte}
-        />
-        <Carte
-          name='restaurant'
-          isCurrent={location.pathname === '/restaurant'}
-          currentMenu={restaurant}
-          gallery={galleries.restaurant}
-        />
-        <Carte
-          name='vins'
-          isCurrent={location.pathname === '/vins'}
-          currentMenu={vins}
-
-        />
+        <Switch>
+          <Route
+            path="/carte"
+            render={() => (
+              <Carte
+                name='carte'
+                currentMenu={carte}
+                gallery={galleries.carte}
+              />
+            )}
+          />
+          <Route
+            path="/vins"
+            render={() => (
+              <Carte
+                name='vins'
+                currentMenu={vins}
+                gallery={galleries.vins}
+              />
+            )}
+          />
+          <Route
+            path="/restaurant"
+            render={() => (
+              <RestaurantCarte
+                name='restaurant'
+                currentMenu={restaurant}
+                gallery={galleries.restaurant}
+              />
+            )}
+          />
+        </Switch>
       </Content>
       <SlideshowWrapper>
         <SliderMD gallery={galleries[location.pathname.slice(1)]}/>
