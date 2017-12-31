@@ -85,7 +85,6 @@ const PagesWrapper = ({location, galleries }) => {
               <Carte
                 name='carte'
                 currentMenu={carte}
-                gallery={galleries.carte}
               />
             )}
           />
@@ -95,7 +94,6 @@ const PagesWrapper = ({location, galleries }) => {
               <Carte
                 name='vins'
                 currentMenu={vins}
-                gallery={galleries.vins}
               />
             )}
           />
@@ -104,7 +102,6 @@ const PagesWrapper = ({location, galleries }) => {
             render={() => (
               <RestaurantCarte
                 name='restaurant'
-                currentMenu={restaurant}
                 gallery={galleries.restaurant}
               />
             )}

@@ -3,12 +3,14 @@
 - Photos:
     - version desktop
     - version mobile
+    - charger dès l'arrivé sur /home
+    - baisser la résolution
+    - utiliser celles dites par Michiko (voir mail)
 - Navigation:
     - espacer les graines
     - retirer les lettres
     - graine bouge légèrement
 - restaurant:
-    - carte
     - lien facebook
     - lien téléphone
     - crédit en petit en bas 

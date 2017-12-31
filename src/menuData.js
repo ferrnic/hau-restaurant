@@ -205,7 +205,7 @@ export const restaurant = [
   },{
     name: "Horaires",
     items: [
-      { name: "Fermé le mardi, le mercredi, et le samedi midi." },
+      { name: "" },
     ]
   },{
     name: "Contact",
