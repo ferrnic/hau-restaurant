@@ -11,6 +11,7 @@ const SectionName = styled.h2`
   letter-spacing: 0.3em;
   font-weight: 400;
   transform:scale(1,1.1);
+  line-height: 1.1em;
 `;
 
 const Items = styled.ul`
@@ -26,7 +27,6 @@ const ItemLine = styled.li`
 `;
 
 const ItemName = styled.span`
-  text-overflow: ellipsis;
 `;
 
 const ItemPrice = styled.span`
