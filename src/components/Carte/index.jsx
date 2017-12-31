@@ -16,13 +16,10 @@ const Wrapper = styled.div`
       height: auto;
     }
   `};
-  @media (min-width: 800px) {
-    
-  }
   `;
 
 const H1 = styled.h1`
-  font-size: 2em;
+  font-size: 1.6em;
   overflow-y: hidden;
   line-height: 0.8em;
   text-overflow: ellipsis;
@@ -31,16 +28,13 @@ const H1 = styled.h1`
   letter-spacing: 0.15em;
   margin-top: 105px;
   
-  @media (min-width: 600px) {
-    font-size: 48px;
+  
+  @media (min-width: ${p => p.theme.breakpoints.verySmall.viewMinWidth}px) {
+    font-size: 2em;
   }
    
-  @media (min-width: 800px) {
-    //font-size: 4em;
-  }   
-  
-  @media (min-width: 1000px) {
-    //font-size: 4.5em;
+  @media (min-width: ${p => p.theme.breakpoints.small.viewMinWidth}px) {
+    font-size: 2.8em;
   }
 `;
 

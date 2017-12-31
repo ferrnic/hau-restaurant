@@ -12,6 +12,11 @@ const SectionName = styled.h2`
   font-weight: 400;
   transform:scale(1,1.1);
   line-height: 1.1em;
+  
+  font-size: 1.3em;
+  @media (min-width: ${p => p.theme.breakpoints.medium}px) {
+    font-size: 1.5em;
+  }
 `;
 
 const Items = styled.ul`

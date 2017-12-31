@@ -7,16 +7,11 @@
 - Navigation:
     - espacer les graines
     - retirer les lettres
-    - graine bouge légrèreent
-    - test : aligner titre avec la graine: test en capture d'écran
-- layout: réduire le breackpoint desktop/mobile: largeur max de la carte 420px (=800vw ?) => pas d'image trop petite
-- titres cartes: un peu plus gros en mobile et s'adapte en réduisant 
+    - graine bouge légèrement
 - restaurant:
     - ouvertures + carte
     - crédit en petit en bas 
-    - sous-tirtes : césure automatique ?
-    - réduire encore un peu la taille
-    - changement toute les 3 secondes
+    - réduire encore un peu la taille (?)
 - vins: MAJ datas
 - scrollbar du menu : garder ou enlever ?
 - enlever les 0 euros

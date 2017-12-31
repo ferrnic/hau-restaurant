@@ -42,7 +42,7 @@ const BorderBottom = styled.div`
 
 const Wrapper = styled.div`
   display: none;
-  @media (min-width: 800px) {
+  @media (min-width: ${p => p.theme.breakpoints.medium.viewMinWidth}px) {
     display: block;
   }
 `;

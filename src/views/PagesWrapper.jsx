@@ -12,14 +12,13 @@ const SlideshowWrapper = styled.div`
   display: none;
   position: relative;
   
-  @media (min-width: 530px) {
+  @media (min-width: ${p => p.theme.breakpoints.medium.viewMinWidth}px) {
     display: block;
     flex-grow: 1; // grows as much as space left
   }  
 `;
 
 const LeftMenu = styled.div`
-  
   position: relative;
   width: 110px;
   height: 100vh;
@@ -36,10 +35,10 @@ const Content = styled.div`
   overflow-y: scroll;
   flex-shrink: 0; // does not shrink
   
-  @media (min-width: 530px) {
+  @media (min-width: ${p => p.theme.breakpoints.medium.viewMinWidth}px) {
     width: 50vw;
-    min-width: 420px;
-    max-width: 420px;
+    min-width: ${p => p.theme.breakpoints.medium.contentSize - 110}px;
+    max-width: ${p => p.theme.breakpoints.medium.contentSize - 110}px;
   }
 `;
 
