@@ -1,20 +1,24 @@
 # TODO
 - Accueil:
-    - video en fond
-    - espacer les graines
+    - video en fond: saison en cours
 - Photos:
     - version desktop
     - version mobile
 - Navigation:
     - espacer les graines
     - retirer les lettres
-    - test : aligner titre avec la graine
-- layout: réduire le breackpoint desktop/mobile: largeur max de la carte 420px (=800vw ?) 
+    - graine bouge légrèreent
+    - test : aligner titre avec la graine: test en capture d'écran
+- layout: réduire le breackpoint desktop/mobile: largeur max de la carte 420px (=800vw ?) => pas d'image trop petite
+- titres cartes: un peu plus gros en mobile et s'adapte en réduisant 
 - restaurant:
     - ouvertures + carte
     - crédit en petit en bas 
+    - sous-tirtes : césure automatique ?
+    - réduire encore un peu la taille
+    - changement toute les 3 secondes
 - vins: MAJ datas
- 
-# INADA
-- choisir theme
-- landing page: utiliser celle de michiko ? liens réseaux sociaux ?
+- scrollbar du menu : garder ou enlever ?
+- enlever les 0 euros
+- restaura,t: retour à la ligne après "bienvenue chez hau"
+marge en dessous de "restaurant" trop grande
