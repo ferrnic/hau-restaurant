@@ -7,7 +7,7 @@ const Wrapper = styled.li`
 const SectionName = styled.h2`
   text-transform: uppercase;
   color: ${p => p.theme.colors.main};
-  margin: 45px 0 15px;
+  margin: 20px 0 8px;
   letter-spacing: 0.3em;
   font-weight: 400;
   transform:scale(1,1.1);

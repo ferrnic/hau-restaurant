@@ -20,14 +20,15 @@ const Wrapper = styled.div`
 
 const H1 = styled.h1`
   font-size: 1.6em;
-  overflow-y: hidden;
   line-height: 0.8em;
+  letter-spacing: 0.15em;
+  
+  overflow-y: hidden;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  margin-bottom: 1.2em;
-  letter-spacing: 0.15em;
-  margin-top: 105px;
   
+  margin-top: 105px;
+  margin-bottom: 0.8em;
   
   @media (min-width: ${p => p.theme.breakpoints.verySmall.viewMinWidth}px) {
     font-size: 2em;
