@@ -33,7 +33,7 @@ const Content = styled.div`
   position: relative;
   height: 100vh;
   width: calc(100vw - 110px);
-  overflow-y: auto;
+  overflow-y: scroll;
   flex-shrink: 0; // does not shrink
   
   @media (min-width: 530px) {
