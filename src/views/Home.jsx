@@ -1,10 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import HomeSeed, { Wrapper as HomeSeedWrapper } from '../components/HomeSeed';
-import LetterH from '../components/HomeSeed/LetterH';
-import LetterA from '../components/HomeSeed/LetterA';
-import LetterU from '../components/HomeSeed/LetterU';
+import { Wrapper as HomeSeedWrapper } from '../components/HomeSeed';
 import Seed, { StyledSeed } from '../components/HomeSeed/Seed';
 
 const BackGround = styled.div`
@@ -26,14 +23,18 @@ const Wrapper = styled.div`
   left: -15px;
   
   ${StyledSeed} { 
-    display: block;
-   
-    transform: rotate(${p => p.theme.seedRotation[3]}deg);
-    transition: all 800ms ease;
-
-    :hover {
-      transform: rotate(${p => p.theme.seedRotation[3] - 10}deg);
-    }   
+    .seedPath, .letter {
+      transition: opacity 800ms ease;
+    }
+    .seedPath:hover {
+      opacity: 0;
+    }
+    .letter {
+      opacity: 0;
+    }
+    .letter.isHovered {
+      opacity: 1;
+    }
   }  
 `;
 
@@ -50,24 +51,24 @@ const Home = () => (
   <BackGround>
     <Wrapper>
       <SeedWrapper>
-        <HomeSeed
-          Seed={<Seed to='/carte'/>}
-          Letter={<LetterH />}
+        <Seed
+          to='/carte'
+          H
         />
       </SeedWrapper>
       <SeedWrapper>
-        <HomeSeed
-          Seed={<Seed to='/vins'/>}
-          Letter={<LetterA />}
+        <Seed
+          to='/vins'
+          A
         />
       </SeedWrapper>
       <SeedWrapper
         seedRotate
         seedTranslate
       >
-        <HomeSeed
-          Seed={<Seed to='/restaurant'/>}
-          Letter={<LetterU />}
+        <Seed
+          to='/restaurant'
+          U
         />
       </SeedWrapper>
     </Wrapper>
