@@ -6,7 +6,7 @@ const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
 
 const createBackgroundImage = (publicId) => {
   const t = new cloudinary.Transformation();
-  t.dpr('auto').quality('auto:low');
+  t.crop('scale').width(2000).quality('auto:low');
   return cloudinaryCore.url(publicId, t);
 };
 
