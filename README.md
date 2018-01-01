@@ -6,10 +6,7 @@
     - charger dès l'arrivé sur /home
     - baisser la résolution
     - utiliser celles dites par Michiko (voir mail)
-- Navigation:
-    - espacer les graines
-    - retirer les lettres
-    - graine bouge légèrement
+- DeepLink Facebook: https://www.quora.com/How-does-Bitlys-Deep-Linking-detect-if-the-user-already-has-the-app-installed
 
 # Next
 - Accueil: video en fond: saison en cours

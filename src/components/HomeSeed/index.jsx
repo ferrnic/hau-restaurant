@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Seed from './Seed';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -18,12 +17,12 @@ export const Wrapper = styled.div`
     opacity: 0;
   }
   
-  .seed {
+  .seedPath {
   }
 
   &:hover {
-    .seed {
-      opacity: 0;
+    .seedPath {
+      opacity: 0.1;
     }
     .letter {
       opacity: 1;
@@ -33,18 +32,14 @@ export const Wrapper = styled.div`
 
 const HomeSeed = ({Seed, Letter}) => (
   <Wrapper>
-    {Seed}
     {Letter}
+    {Seed}
   </Wrapper>
 );
 
 HomeSeed.propTypes = {
-  Seed: PropTypes.element,
+  Seed: PropTypes.element.isRequired,
   Letter: PropTypes.element.isRequired,
-};
-
-HomeSeed.defaultProps = {
-  Seed: <Seed />,
 };
 
 export default HomeSeed;

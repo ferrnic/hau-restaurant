@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import styled, { css } from 'styled-components';
 
 import HomeSeed, { Wrapper as HomeSeedWrapper } from '../components/HomeSeed';
@@ -25,16 +24,23 @@ const Wrapper = styled.div`
   max-width: 500px;
   position: relative;
   left: -15px;
-`;
   
-const StyledLinks = styled(Link)`
-  width: 33%;
-  margin: 2%;
+  ${StyledSeed} { 
+    display: block;
+   
+    transform: rotate(${p => p.theme.seedRotation[3]}deg);
+    transition: all 800ms ease;
+
+    :hover {
+      transform: rotate(${p => p.theme.seedRotation[3] - 10}deg);
+    }   
+  }  
 `;
 
 const SeedWrapper = styled.div`
-  width: 100%;
-
+  width: 33%;
+  margin: 2%;
+  
   // rotate and shift the seeds
   ${p => p.seedTranslate && css`${HomeSeedWrapper} { transform: translateX(30px) translateY(-5px); `}
   ${p => p.seedRotate && css`${StyledSeed} { transform: rotate(${p.theme.seedRotation[1]}deg); `}
@@ -43,33 +49,27 @@ const SeedWrapper = styled.div`
 const Home = () => (
   <BackGround>
     <Wrapper>
-      <StyledLinks to='/carte'>
-        <SeedWrapper>
-          <HomeSeed
-            SpecificSeed={<Seed />}
-            Letter={<LetterH />}
-          />
-        </SeedWrapper>
-      </StyledLinks>
-      <StyledLinks to='/vins'>
-        <SeedWrapper>
-          <HomeSeed
-            SpecificSeed={<Seed/>}
-            Letter={<LetterA />}
-          />
-        </SeedWrapper>
-      </StyledLinks>
-      <StyledLinks to='/restaurant'>
-        <SeedWrapper
-          seedRotate
-          seedTranslate
-        >
-          <HomeSeed
-            SpecificSeed={<Seed />}
-            Letter={<LetterU />}
-          />
-        </SeedWrapper>          
-      </StyledLinks>
+      <SeedWrapper>
+        <HomeSeed
+          Seed={<Seed to='/carte'/>}
+          Letter={<LetterH />}
+        />
+      </SeedWrapper>
+      <SeedWrapper>
+        <HomeSeed
+          Seed={<Seed to='/vins'/>}
+          Letter={<LetterA />}
+        />
+      </SeedWrapper>
+      <SeedWrapper
+        seedRotate
+        seedTranslate
+      >
+        <HomeSeed
+          Seed={<Seed to='/restaurant'/>}
+          Letter={<LetterU />}
+        />
+      </SeedWrapper>
     </Wrapper>
   </BackGround>
 );

@@ -1,77 +1,62 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import HomeSeed, { Wrapper as HomeSeedWrapper } from './HomeSeed';
-import LetterH from '../components/HomeSeed/LetterH';
-import LetterA from '../components/HomeSeed/LetterA';
-import LetterU from '../components/HomeSeed/LetterU';
+import Seed, {StyledSeed} from "./HomeSeed/Seed";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 35px 0 20px; // slide a bit because svg ar not centered
+  padding: 25px 27px 0 23px;
 
-  div {
-    svg {
-      fill: ${p => p.theme.colors.dark};
+  ${StyledSeed} { 
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    
+    .seedPath {
+      transition: transform 800ms ease;
+      transform-origin: 50% 50%;
+      transform: rotate(${p => p.theme.seedRotation[3]}deg);
     }
-  }
 
-  .selected {
-    div {
-      svg {
-        fill: ${p => p.theme.colors.main};
-      }
+    .seedPath:hover {
+      transform: rotate(${p => p.theme.seedRotation[3] - 10}deg);
+    }   
+  }  
+  
+  ${StyledSeed}.firstSeed {
+    margin-bottom: 10px;
+    .seedPath {
+      transform: rotate(0deg) translateX(3px) translateY(-5px);
     }
+    .seedPath:hover {
+      transform: rotate(10deg) translateX(3px) translateY(-5px);
+    }    
+  }
+  
+  path {
+    fill: ${p => p.theme.colors.dark};
+  }
+  .active > path {
+      fill: ${p => p.theme.colors.main};
   }
 `;
 
-const SeedLink = styled(NavLink)`
-  display: block;
-  ${HomeSeedWrapper} {
-    padding-top: 100%;
-  }
-  .seed {
-    transform: rotate(${p => p.theme.seedRotation[3]}deg);
-  }
-`;
-
-const FirstSeedLink = SeedLink.extend`
-  .seed {
-    transform: rotate(0deg) translateX(3px) translateY(-5px);
-  }
-`;
-
-const Navigation = () => {
-  return (
-    <Wrapper>
-      <FirstSeedLink
-        activeClassName="selected"
-        to='/carte'
-      >
-        <HomeSeed
-          Letter={<LetterH />}
-        />
-      </FirstSeedLink>
-      <SeedLink
-        activeClassName="selected"
-        to='/vins'
-      >
-        <HomeSeed
-          Letter={<LetterA />}
-        />
-      </SeedLink>
-      <SeedLink
-        activeClassName="selected"
-        to='/restaurant'
-      >
-        <HomeSeed
-          Letter={<LetterU />}
-        />
-      </SeedLink>
-    </Wrapper>
-  );
-};
+const Navigation = () => (
+  <Wrapper>
+    <Seed
+      className="firstSeed"
+      to='/carte'
+    />
+    <Seed
+      to='/vins'
+    />
+    <Seed
+      to='/restaurant'
+    />
+  </Wrapper>
+);
 
 export default Navigation;
