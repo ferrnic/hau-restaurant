@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { Wrapper as HomeSeedWrapper } from '../components/HomeSeed';
 import Seed, { StyledSeed } from '../components/HomeSeed/Seed';
 
 const BackGround = styled.div`
@@ -18,9 +17,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 90vw;
-  max-width: 500px;
+  max-width: 800px;
   position: relative;
-  left: -15px;
   
   ${StyledSeed} { 
     .seedPath, .letter {
@@ -35,16 +33,20 @@ const Wrapper = styled.div`
     .letter.isHovered {
       opacity: 1;
     }
+    
+    .seedPath#lastSeed {
+      transform-origin: 50% 50%;
+      transform: rotate(${p => p.theme.seedRotation[1]}deg) translateY(0);
+    }
   }  
 `;
 
 const SeedWrapper = styled.div`
   width: 33%;
   margin: 2%;
-  
-  // rotate and shift the seeds
-  ${p => p.seedTranslate && css`${HomeSeedWrapper} { transform: translateX(30px) translateY(-5px); `}
-  ${p => p.seedRotate && css`${StyledSeed} { transform: rotate(${p.theme.seedRotation[1]}deg); `}
+  ${p => p.lastSeed && css`
+     margin: 1% 0 3% 7%;
+  `}
 `;
 
 const Home = () => (
@@ -62,13 +64,11 @@ const Home = () => (
           A
         />
       </SeedWrapper>
-      <SeedWrapper
-        seedRotate
-        seedTranslate
-      >
+      <SeedWrapper lastSeed>
         <Seed
           to='/restaurant'
           U
+          pathId="lastSeed"
         />
       </SeedWrapper>
     </Wrapper>

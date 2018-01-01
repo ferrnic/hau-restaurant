@@ -34,10 +34,7 @@ const Wrapper = styled.div`
   ${StyledSeed}#firstSeed {
       margin-bottom: 12px;
   }
-    
-  path {
-    fill: ${p => p.theme.colors.dark};
-  }
+  
   .active > path {
     fill: ${p => p.theme.colors.main};
   }

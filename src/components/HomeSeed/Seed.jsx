@@ -7,6 +7,10 @@ export const StyledSeed = styled.svg`
   .seedPath:hover {
     cursor: pointer;
   }
+      
+  path {
+    fill: ${p => p.theme.colors.dark};
+  }
 `;
 class Seed extends React.Component {
   constructor(props) {
