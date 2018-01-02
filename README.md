@@ -9,9 +9,7 @@
 
 # Bugs
 - chrome mobile: les graines de navigation ne son pas alignés avec les titres de cartes.
-- firefox desktop: mauvais positionnement graine de droite dans /home.
 - actualiser une page de "carte" renvoie un 404.
-- firefox : navigation buttons onActive outline
 
 # Next
 - DeepLink Facebook: https://www.quora.com/How-does-Bitlys-Deep-Linking-detect-if-the-user-already-has-the-app-installed
