@@ -19,7 +19,8 @@ const Wrapper = styled.div`
   width: 90vw;
   max-width: 800px;
   position: relative;
-  
+  // re-center because lastSeed is 6% on the right
+  left: -3%;
   ${StyledSeed} { 
     .seedPath, .letter {
       transition: opacity 800ms ease;
@@ -44,8 +45,14 @@ const Wrapper = styled.div`
 const SeedWrapper = styled.div`
   width: 33%;
   margin: 2%;
+  position: relative;
+  
   ${p => p.lastSeed && css`
-     margin: 1% 0 3% 7%;
+    left: 6%;
+    svg {
+      position: relative;
+      bottom: 5%;
+    }
   `}
 `;
 
