@@ -35,6 +35,8 @@ class Seed extends React.Component {
     return (
       <StyledSeed
         viewBox="0 0 120 120"
+        width="100%"
+        height="100%"
         xmlns="http://www.w3.org/2000/svg"
         xmlSpace="preserve"
         id={pathId}
