@@ -6,7 +6,7 @@ import Seed, {StyledSeed} from "./HomeSeed/Seed";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 25px 27px 0 23px;
+  padding: 22px 27px 0 23px;
 
   ${StyledSeed} { 
     margin-bottom: 5px;
