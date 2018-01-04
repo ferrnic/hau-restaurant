@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import Seed, { StyledSeed } from '../components/HomeSeed/Seed';
+import { StyledSeed } from '../components/HomeSeed/Seed';
+import HomeSeed from "../components/HomeSeed";
 
 const BackGround = styled.div`
   position: relative;  
@@ -42,7 +43,7 @@ const Wrapper = styled.div`
   }  
 `;
 
-const SeedWrapper = styled.div`
+const SeedWrapper = styled(HomeSeed)`
   width: 33%;
   margin: 2%;
   position: relative;
@@ -59,25 +60,18 @@ const SeedWrapper = styled.div`
 const Home = () => (
   <BackGround>
     <Wrapper>
-      <SeedWrapper>
-        <Seed
-          to='/carte'
-          H
-        />
-      </SeedWrapper>
-      <SeedWrapper>
-        <Seed
-          to='/vins'
-          A
-        />
-      </SeedWrapper>
-      <SeedWrapper lastSeed>
-        <Seed
-          to='/restaurant'
-          U
-          pathId="lastSeed"
-        />
-      </SeedWrapper>
+      <SeedWrapper
+        to='/carte'
+        letter={'H'}
+      />
+      <SeedWrapper
+        to='/vins'
+        letter={'A'}
+      />
+      <SeedWrapper
+        to='/restaurant'
+        letter={'U'}
+      />
     </Wrapper>
   </BackGround>
 );
