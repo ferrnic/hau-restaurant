@@ -11,12 +11,12 @@ export const StyledSeed = styled.svg`
 
 const Seed = (props) => {
   const {
+    to,
     show,
-    fill,
-    className,
     onMouseEnter,
     onMouseLeave,
-    to
+    className,
+    ...rest
   } = props;
   return (
     <StyledSeed
@@ -24,8 +24,8 @@ const Seed = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlSpace="preserve"
       show={show}
-      fill={fill}
       className={className}
+      {...rest}
     >
       <a
         href={to}
