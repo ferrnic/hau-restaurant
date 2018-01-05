@@ -3,26 +3,13 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Letter from "./Letter";
 import Seed from "./Seed";
-import {NavLink} from "react-router-dom";
 
 const Wrapper = styled.div`
 `;
 
 const SeedPath = styled(Seed)`
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const StyledNavLink = styled(NavLink)`
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rebeccapurple;
-  
-  &:focus { 
-    outline: none; 
-  }
+  opacity: 0;
+  z-index: 1;
 `;
 
 class HomeSeed extends React.Component {
@@ -31,8 +18,8 @@ class HomeSeed extends React.Component {
     this.state = { isHovered: false };
   }
 
-  propTypes = {
-    letter: PropTypes.element.isRequired,
+  static propTypes = {
+    letter: PropTypes.string.isRequired,
   };
 
   mouseHover = (isHovered) => {
@@ -45,14 +32,15 @@ class HomeSeed extends React.Component {
     const { letter, to, className } = this.props;
     return (
       <Wrapper className={className}>
-        <div/>
-        <StyledNavLink to={to}>
-          <SeedPath
-            onMouseEnter={() => this.mouseHover(true)}
-            onMouseLeave={() => this.mouseHover(false)}
-          />
-        </StyledNavLink>
+        <SeedPath
+          to={to}
+          onMouseEnter={() => this.mouseHover(true)}
+          onMouseLeave={() => this.mouseHover(false)}
+          show
+        />
         <Seed
+          onMouseEnter={() => console.log('lala')}
+          onMouseLeave={() => this.mouseHover(false)}
           show={!this.state.isHovered}
         />
         <Letter

@@ -4,18 +4,38 @@ import {svgCss} from "./svgCss";
 
 export const StyledSeed = styled.svg`
   ${svgCss}
+  path:hover {
+    cursor: pointer;
+  }
  `;
 
-const Seed = ({ show, fill }) => (
-  <StyledSeed
-    viewBox="0 0 120 120"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlSpace="preserve"
-    show={ show }
-    fill={ fill }
-  >
-    <path d="M10 100.7s129.7-20.5 93.7-69.4C67.7-17.9 10 100.7 10 100.7z" />
-  </StyledSeed>
-);
+const Seed = (props) => {
+  const {
+    show,
+    fill,
+    className,
+    onMouseEnter,
+    onMouseLeave,
+    to
+  } = props;
+  return (
+    <StyledSeed
+      viewBox="0 0 120 120"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlSpace="preserve"
+      show={show}
+      fill={fill}
+      className={className}
+    >
+      <a
+        href={to}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <path d="M10 100.7s129.7-20.5 93.7-69.4C67.7-17.9 10 100.7 10 100.7z"/>
+      </a>
+    </StyledSeed>
+  );
+};
 
 export default Seed;
