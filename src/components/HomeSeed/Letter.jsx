@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {svgCss} from "./svgCss";
 
-const StyledLetter = styled.svg`
+export const StyledLetter = styled.svg`
   ${svgCss}
 `;
 

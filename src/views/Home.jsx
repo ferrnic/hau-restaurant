@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 import { StyledSeed } from '../components/HomeSeed/Seed';
 import HomeSeed from "../components/HomeSeed";
+import {StyledLetter} from "../components/HomeSeed/Letter";
 
 const BackGround = styled.div`
   position: relative;  
@@ -22,24 +23,8 @@ const Wrapper = styled.div`
   position: relative;
   // re-center because lastSeed is 6% on the right
   left: -3%;
-  ${StyledSeed} { 
-    .seedPath, .letter {
-      transition: opacity 800ms ease;
-    }
-    .seedPath:hover {
-      opacity: 0;
-    }
-    .letter {
-      opacity: 0;
-    }
-    .letter.isHovered {
-      opacity: 1;
-    }
-    
-    .seedPath#lastSeed {
-      transform-origin: 50% 50%;
-      transform: rotate(${p => p.theme.seedRotation[1]}deg) translateY(0);
-    }
+  ${StyledSeed}, ${StyledLetter} { 
+    transition: opacity 300ms ease;
   }  
 `;
 
@@ -48,11 +33,10 @@ const SeedWrapper = styled(HomeSeed)`
   margin: 2%;
   position: relative;
   
-  ${p => p.lastSeed && css`
-    left: 6%;
-    svg {
-      position: relative;
-      bottom: 5%;
+  ${p => p.rotate && css`
+    ${StyledSeed} {
+      transform-origin: 50% 50%;
+      transform: rotate(${p => p.theme.seedRotation[1]}deg) translateY(-12%) translateX(0);
     }
   `}
 `;
@@ -71,6 +55,7 @@ const Home = () => (
       <SeedWrapper
         to='/restaurant'
         letter={'U'}
+        rotate
       />
     </Wrapper>
   </BackGround>
