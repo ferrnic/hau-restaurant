@@ -9,6 +9,14 @@ import { theme } from "./theme";
 import Home from "./views/Home";
 import PagesWrapper from "./views/PagesWrapper";
 
+const orderByPublic_id= (a,b) => {
+  if (a.public_id < b.public_id)
+    return -1;
+  if (a.public_id > b.public_id)
+    return 1;
+  return 0;
+};
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -24,11 +32,13 @@ class App extends React.Component {
   fetchList(tag) {
     axios.get(`https://res.cloudinary.com/hau/image/list/${tag}.json`)
       .then(res => {
+        // order the list of images by public_id
+        const orderedImagesList = res.data.resources.sort(orderByPublic_id);
         this.setState({
           galleries: {
-            ...this.state.galleries,
-            [tag]: res.data.resources,
-          }
+              ...this.state.galleries,
+              [tag]: orderedImagesList,
+            }
         });
       });
   }
