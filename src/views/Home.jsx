@@ -36,7 +36,7 @@ const SeedWrapper = styled(HomeSeed)`
   ${p => p.rotate && css`
     ${StyledSeed} {
       transform-origin: 50% 50%;
-      transform: rotate(${p => p.theme.seedRotation[1]}deg) translateY(-12%) translateX(0);
+      transform: rotate(${p => p.theme.seedRotation[1]}deg) translateY(-17%) translateX(1%);
     }
   `}
 `;
