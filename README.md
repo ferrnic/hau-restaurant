@@ -13,6 +13,7 @@
 - change page title.
 - graine position on safari 10.1.2
 - position graine /home de droite: elle est bien, mais la lettre U est trop haute
+- navigation seed wrong color
 
 # Next
 - DeepLink Facebook: https://www.quora.com/How-does-Bitlys-Deep-Linking-detect-if-the-user-already-has-the-app-installed
