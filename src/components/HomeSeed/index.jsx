@@ -16,7 +16,7 @@ class HomeSeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isHovered: false };
-  }
+  };
 
   static propTypes = {
     letter: PropTypes.string.isRequired,
@@ -39,8 +39,6 @@ class HomeSeed extends React.Component {
           show
         />
         <Seed
-          onMouseEnter={() => console.log('lala')}
-          onMouseLeave={() => this.mouseHover(false)}
           show={!this.state.isHovered}
         />
         <Letter

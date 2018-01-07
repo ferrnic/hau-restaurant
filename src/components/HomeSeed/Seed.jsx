@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {svgCss} from "./svgCss";
+import {withRouter} from "react-router-dom";
 
 export const StyledSeed = styled.svg`
   ${svgCss}
@@ -16,27 +17,32 @@ const Seed = (props) => {
     onMouseEnter,
     onMouseLeave,
     className,
+    history,
+    rotate,
     ...rest
   } = props;
+
+  const handleClickPath = () => {
+    history.push(to);
+  };
+
   return (
     <StyledSeed
       viewBox="0 0 120 120"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
       xmlSpace="preserve"
       show={show}
       className={className}
       {...rest}
     >
-      <a
-        xlinkHref={to}
+      <path
+        d="M10 100.7s129.7-20.5 93.7-69.4C67.7-17.9 10 100.7 10 100.7z"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-      >
-        <path d="M10 100.7s129.7-20.5 93.7-69.4C67.7-17.9 10 100.7 10 100.7z"/>
-      </a>
+        onClick={() => handleClickPath()}
+      />
     </StyledSeed>
   );
 };
 
-export default Seed;
+export default withRouter(Seed);
