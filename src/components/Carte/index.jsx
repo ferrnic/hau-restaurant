@@ -49,7 +49,7 @@ export const SectionName = styled.h2`
   font-size: 1.3em;
   @media (min-width: ${p => p.theme.breakpoints.medium}px) {
     font-size: 1.5em;
-  }
+  } 
 `;
 
 export const Items = styled.ul`

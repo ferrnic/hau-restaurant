@@ -1,23 +1,14 @@
 import React from 'react';
 import {Link, Route, Switch} from "react-router-dom";
-import styled from 'styled-components';
+import styled, {withTheme} from 'styled-components';
 
 import Navigation from '../components/Navigation';
 import Carte from '../components/Carte';
 import { carte, vins } from '../menuData';
 import TextLogo from '../components/TextLogo';
-import SliderMD from "../components/Slideshow/SliderMD";
+import SliderM from "../components/Slideshow/SliderM";
 import RestaurantCarte from "../components/Carte/RestaurantCarte";
-
-const SlideshowWrapper = styled.div`
-  display: none;
-  position: relative;
-  
-  @media (min-width: ${p => p.theme.breakpoints.medium.viewMinWidth}px) {
-    display: block;
-    flex-grow: 1; // grows as much as space left
-  }  
-`;
+import SliderS from "../components/Slideshow/SliderS";
 
 const LeftMenu = styled.div`
   position: relative;
@@ -66,52 +57,75 @@ const LogoWrapper = styled(Link)`
   }
 `;
 
-const PagesWrapper = ({location, galleries }) => {
-  return (
-    <Wrapper>
-      {/*<PageBorders />*/}
-      <LeftMenu>
-        <LogoWrapper to="/">
-          <TextLogo />
-        </LogoWrapper>
-        <Navigation />
-      </LeftMenu>
-      <Content>
-        <Switch>
-          <Route
-            path="/carte"
-            render={() => (
-              <Carte
-                name='carte'
-                currentMenu={carte}
-              />
-            )}
-          />
-          <Route
-            path="/vins"
-            render={() => (
-              <Carte
-                name='vins'
-                currentMenu={vins}
-              />
-            )}
-          />
-          <Route
-            path="/restaurant"
-            render={() => (
-              <RestaurantCarte
-                name='restaurant'
-                gallery={galleries.restaurant}
-              />
-            )}
-          />
-        </Switch>
-      </Content>
-      <SlideshowWrapper>
-        <SliderMD gallery={galleries[location.pathname.slice(1)]}/>
-      </SlideshowWrapper>
-    </Wrapper>
-  );
-};
+class PagesWrapper extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      width: window.innerWidth,
+    }
+  }
 
-export default PagesWrapper;
+  componentDidMount() {
+    window.addEventListener("resize", () => this.updateDimensions);
+  };
+  componentWillUnmount() {
+    window.removeEventListener("resize", () => this.updateDimensions);
+  }
+
+  updateDimensions() {
+    this.setState({width: window.innerWidth});
+  };
+
+  render() {
+    const { location, galleries } = this.props;
+    const breakpoint = this.props.theme.breakpoints.medium.viewMinWidth;
+    return (
+      <Wrapper>
+        <LeftMenu>
+          <LogoWrapper to="/">
+            <TextLogo/>
+          </LogoWrapper>
+          <Navigation/>
+        </LeftMenu>
+        <Content>
+          <Switch>
+            <Route
+              path="/carte"
+              render={() => (
+                <Carte
+                  name='carte'
+                  currentMenu={carte}
+                />
+              )}
+            />
+            <Route
+              path="/vins"
+              render={() => (
+                <Carte
+                  name='vins'
+                  currentMenu={vins}
+                />
+              )}
+            />
+            <Route
+              path="/restaurant"
+              render={() => (
+                <RestaurantCarte
+                  name='restaurant'
+                  gallery={galleries.restaurant}
+                />
+              )}
+            />
+          </Switch>
+        </Content>
+        {
+           this.state.width > breakpoint
+          ? <SliderM gallery={galleries[location.pathname.slice(1)]}/>
+          : <SliderS gallery={galleries[location.pathname.slice(1)]}/>
+        }
+      </Wrapper>
+    );
+    }
+}
+
+export default withTheme(PagesWrapper);
