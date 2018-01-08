@@ -27,7 +27,7 @@ const RestaurantCarte = (props) => {
             <ItemLine>
               <ItemName>
                 Bienvenue chez Hau. <br />
-                Vietnamien d’origine, chez Hau on y mange sa cuisine. Dans ce cadre unique rempli de saveurs et d’histoire, le chef vous propose une convivialité bien à lui : une cuisine fine aux saveurs asiatiques, fraîche, et toujours repensée, accompagnée d’une belle carte de vin biologique et naturelle. Un voyage gastronomique proposé à midi comme au soir."
+                Vietnamien d’origine, chez Hau on y mange sa cuisine. Dans ce cadre unique rempli de saveurs et d’histoire, le chef vous propose une convivialité bien à lui : une cuisine fine aux saveurs asiatiques, fraîche, et toujours repensée, accompagnée d’une belle carte de vin biologique et naturelle. Un voyage gastronomique proposé à midi comme au soir.
               </ItemName>
             </ItemLine>
           </Items>
