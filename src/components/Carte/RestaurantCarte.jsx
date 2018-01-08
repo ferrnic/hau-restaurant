@@ -47,7 +47,7 @@ const RestaurantCarte = (props) => {
           <Items>
             <ItemLine>
               <ItemName>
-                Vous pouvez nous joindre sur <Link href="fb://profile/haurestaurant">Facebook</Link> ou par téléphone au <Link href="tel:003227629980">+32 2 762 99 80</Link>.
+                Vous pouvez nous joindre sur <Link href="https://www.facebook.com/haurestaurant/" target="_blank">Facebook</Link> ou par téléphone au <Link href="tel:003227629980">+32 2 762 99 80</Link>.
               </ItemName>
             </ItemLine>
           </Items>
