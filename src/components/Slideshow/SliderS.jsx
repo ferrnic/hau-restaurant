@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import cloudinary from 'cloudinary-core';
+import Slider from 'react-slick';
 
 const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
 
@@ -10,30 +11,25 @@ const createBackgroundImage = (publicId) => {
   return cloudinaryCore.url(publicId, t);
 };
 
-const ImagesContainer = styled.div`
+const ImagesContainer = styled(Slider)`
   position: fixed;
   bottom: 0;
   height: ${p => p.open ? '85vh' : '15vh'};
   width: 100%;
   cursor: pointer;
   transition: height 500ms ease;
-`;
-
-const Background = styled.div`
-  position:absolute;
-  height: 100%;
-  width: 100%;
-  background-color: ${p => p.theme.colors.dark};
+  
+  .slick-list, .slick-track {
+    height: 100%;
+  }
 `;
 
 const StyledImage = styled.div`
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 100%;
   background: url(${p => createBackgroundImage(p.publicId)}) no-repeat center center;
   background-size: cover;
-  opacity: ${p => p.isCurrent ? 1 : 0};
-  transition: opacity 800ms ease;
 `;
 
 const Wrapper = styled.div`
@@ -80,6 +76,17 @@ class SliderS extends React.Component {
     this.state.sliderOpen && this.toggleSlider();
   };
 
+  settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
   render() {
     return (
       <Wrapper>
@@ -87,17 +94,18 @@ class SliderS extends React.Component {
           this.state.sliderOpen &&
           <SlideCloser onClick={this.handleCloseSlider}/>
         }
-        <ImagesContainer open={this.state.sliderOpen}>
-          <Background />
+
+        <ImagesContainer open={this.state.sliderOpen} {...this.settings}>
+            {/*<Background />*/}
           {
             this.props.gallery.map((data, index) => (
               <StyledImage
+                open={this.state.sliderOpen}
                 onClick={e => this.handleClick(e)}
                 key={data.public_id}
                 publicId={data.public_id}
                 isCurrent={index === this.state.currentPicture}
-              >
-              </StyledImage>
+              />
             ))
           }
         </ImagesContainer>
