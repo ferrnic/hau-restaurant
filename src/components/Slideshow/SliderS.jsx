@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import cloudinary from 'cloudinary-core';
 import Slider from 'react-slick';
+import ArrowDown from "./ArrowDown";
 
 const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
 
@@ -39,8 +40,18 @@ const Wrapper = styled.div`
 const SlideCloser = styled.div`
   position: absolute;
   width: 100vw;
-  height: 100vh;
   cursor: pointer;
+  background-color: ${p => p.theme.colors.dark};
+  opacity: ${p => p.open ? 1 : 0};
+  top: ${p => p.open ? 0 : -15}vh;
+  transition: opacity 500ms ease, top 500ms ease;
+`;
+
+const StyledArrowDown = styled(ArrowDown)`
+  display: block;
+  height: 15vh;
+  margin: 0 auto;
+  fill: ${p => p.theme.colors.light};
 `;
 
 class SliderS extends React.Component {
@@ -80,7 +91,6 @@ class SliderS extends React.Component {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 500,
     autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 1,
@@ -90,13 +100,13 @@ class SliderS extends React.Component {
   render() {
     return (
       <Wrapper>
-        {
-          this.state.sliderOpen &&
-          <SlideCloser onClick={this.handleCloseSlider}/>
-        }
-
+        <SlideCloser
+          onClick={this.handleCloseSlider}
+          open={this.state.sliderOpen}
+        >
+          <StyledArrowDown />
+        </SlideCloser>
         <ImagesContainer open={this.state.sliderOpen} {...this.settings}>
-            {/*<Background />*/}
           {
             this.props.gallery.map((data, index) => (
               <StyledImage
