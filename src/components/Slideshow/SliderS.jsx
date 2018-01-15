@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import cloudinary from 'cloudinary-core';
 import Slider from 'react-slick';
+import Swipeable from 'react-swipeable'
+
 import ArrowDown from "./ArrowDown";
 
 const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
@@ -47,7 +49,7 @@ const SlideCloser = styled.div`
   transition: opacity 500ms ease, top 500ms ease;
 `;
 
-const StyledArrowDown = styled(ArrowDown)`
+const StyledArrowDown = styled(ArrowDown)` 
   display: block;
   height: 15vh;
   margin: 0 auto;
@@ -97,6 +99,14 @@ class SliderS extends React.Component {
     slidesToScroll: 1
   };
 
+  swipedUp() {
+    this.setState({ sliderOpen: true })
+  }
+
+  swipedDown() {
+    this.setState({ sliderOpen: false })
+  }
+
   render() {
     return (
       <Wrapper>
@@ -106,19 +116,24 @@ class SliderS extends React.Component {
         >
           <StyledArrowDown />
         </SlideCloser>
-        <ImagesContainer open={this.state.sliderOpen} {...this.settings}>
-          {
-            this.props.gallery.map((data, index) => (
-              <StyledImage
-                open={this.state.sliderOpen}
-                onClick={e => this.handleClick(e)}
-                key={data.public_id}
-                publicId={data.public_id}
-                isCurrent={index === this.state.currentPicture}
-              />
-            ))
-          }
-        </ImagesContainer>
+        <Swipeable
+          onSwipedUp={() => this.swipedUp()}
+          onSwipedDown={() => this.swipedDown()}
+        >
+          <ImagesContainer open={this.state.sliderOpen} {...this.settings}>
+            {
+              this.props.gallery.map((data, index) => (
+                <StyledImage
+                  open={this.state.sliderOpen}
+                  onClick={e => this.handleClick(e)}
+                  key={data.public_id}
+                  publicId={data.public_id}
+                  isCurrent={index === this.state.currentPicture}
+                />
+              ))
+            }
+          </ImagesContainer>
+        </Swipeable>
       </Wrapper>
     );
   }
