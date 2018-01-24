@@ -1,7 +1,5 @@
 # TODO
 - Photos:
-  - mobile
-  - desktop: flèches pour previous/next
   - charger et stocker dès l'arrivé sur /home
   - charger en fonction du viewport
 
