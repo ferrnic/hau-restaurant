@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { Video, Transformation } from 'cloudinary-react';
 
 import { StyledSeed } from '../components/HomeSeed/Seed';
 import HomeSeed from "../components/HomeSeed";
@@ -9,7 +10,7 @@ const BackGround = styled.div`
   position: relative;  
   width: 100vw;
   height: 100vh;
-  background-color: ${props => props.theme.colors.main};
+  background-color: ${props => props.theme.colors.dark};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +34,10 @@ const SeedWrapper = styled(HomeSeed)`
   margin: 2%;
   position: relative;
   
+  svg {
+    fill: ${p => p.theme.colors.main};
+  }
+  
   ${p => p.rotate && css`
     ${StyledSeed} {
       transform-origin: 50% 50%;
@@ -41,8 +46,80 @@ const SeedWrapper = styled(HomeSeed)`
   `}
 `;
 
-const Home = () => (
-  <BackGround>
+
+const StyledVideo = styled(Video)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  top: 0;
+  left: 0;
+
+  /* 1. Pas de support d'object-fit */
+  @media (min-aspect-ratio: 16/9) {
+    height: 300%;
+    top: -100%;
+  }
+  @media (max-aspect-ratio: 16/9) {
+    width: 300%;
+    left: -100%;
+  }
+  /* 2. En cas de support d'object-fit, écrase les règles en (1) */
+  @supports (object-fit: cover) {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+`;
+
+
+const Home = () => {
+  const randomVideo = Math.floor(Math.random() * 3) + 1;
+  console.log(randomVideo);
+  return (
+      <BackGround>
+      {
+        randomVideo === 1 &&
+        <StyledVideo
+          cloudName="hau"
+          publicId="hau-hivers"
+          autoPlay
+          loop
+          poster={null}
+        >
+          <Transformation format="ogv"/>
+          <Transformation format="webm"/>
+          <Transformation format="mp4"/>
+        </StyledVideo>
+      }{
+      randomVideo === 2 &&
+      <StyledVideo
+        cloudName="hau"
+        publicId="hau-hivers-2"
+        autoPlay
+        loop
+        poster={null}
+      >
+        <Transformation format="ogv"/>
+        <Transformation format="webm"/>
+        <Transformation format="mp4"/>
+      </StyledVideo>
+    }{
+      randomVideo === 3 &&
+      <StyledVideo
+        cloudName="hau"
+        publicId="hau-hivers-3"
+        autoPlay
+        loop
+        poster={null}
+      >
+        <Transformation format="ogv"/>
+        <Transformation format="webm"/>
+        <Transformation format="mp4"/>
+      </StyledVideo>
+    }
     <Wrapper>
       <SeedWrapper
         to='/restaurant'
@@ -58,7 +135,8 @@ const Home = () => (
         rotate
       />
     </Wrapper>
-  </BackGround>
-);
+    </BackGround>
+  );
+};
 
 export default Home;
