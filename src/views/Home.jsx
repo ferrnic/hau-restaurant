@@ -45,15 +45,15 @@ const Home = () => (
   <BackGround>
     <Wrapper>
       <SeedWrapper
-        to='/carte'
+        to='/restaurant'
         letter={'H'}
       />
       <SeedWrapper
-        to='/vins'
+        to='/carte'
         letter={'A'}
       />
       <SeedWrapper
-        to='/restaurant'
+        to='/vins'
         letter={'U'}
         rotate
       />

@@ -40,20 +40,20 @@ const Navigation = (props) => {
   return (
     <Wrapper>
       <StyledSeed
-        to='/carte'
+        to='/restaurant'
         show
         rotate
+        isActive={props.location.pathname === '/restaurant'}
+      />
+      <StyledSeed
+        to='/carte'
+        show
         isActive={props.location.pathname === '/carte'}
       />
       <StyledSeed
         to='/vins'
         show
         isActive={props.location.pathname === '/vins'}
-      />
-      <StyledSeed
-        to='/restaurant'
-        show
-        isActive={props.location.pathname === '/restaurant'}
       />
     </Wrapper>
   );
