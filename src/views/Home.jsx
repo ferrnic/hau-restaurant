@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {css, withTheme} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Video, Transformation } from 'cloudinary-react';
 
 import { StyledSeed } from '../components/HomeSeed/Seed';
@@ -74,63 +74,39 @@ const StyledVideo = styled(Video)`
   }
 `;
 
-class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      width: window.innerWidth,
-    }
-  }
+const Home = () => (
+  <BackGround>
+    <StyledVideo
+      cloudName="hau"
+      publicId="hau-automn-1"
+      autoPlay
+      loop
+      poster={null}
+      onClick={e => e.preventDefault()}
+      muted
+      playsInline
+    >
+      <Transformation streaming_profile="full_hd"/>
+      <Transformation format="ogv"/>
+      <Transformation format="webm"/>
+      <Transformation format="mp4"/>
+    </StyledVideo>
+    <Wrapper>
+      <SeedWrapper
+        to='/restaurant'
+        letter={'H'}
+      />
+      <SeedWrapper
+        to='/carte'
+        letter={'A'}
+      />
+      <SeedWrapper
+        to='/vins'
+        letter={'U'}
+        rotate
+      />
+    </Wrapper>
+  </BackGround>
+);
 
-  componentDidMount() {
-    window.addEventListener("resize", () => this.updateDimensions());
-  };
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", () => this.updateDimensions());
-  }
-
-  updateDimensions() {
-    this.setState({width: window.innerWidth});
-  };
-
-  render() {
-    const breakpoint = this.props.theme.breakpoints.small.viewMinWidth;
-    return (
-      <BackGround>
-        <StyledVideo
-          cloudName="hau"
-          publicId="hau-automn-1"
-          autoPlay
-          loop
-          poster={null}
-          onClick={e => e.preventDefault()}
-          muted
-          playsInline
-        >
-          <Transformation streaming_profile="full_hd"/>
-          <Transformation format="ogv"/>
-          <Transformation format="webm"/>
-          <Transformation format="mp4"/>
-        </StyledVideo>
-        <Wrapper>
-          <SeedWrapper
-            to='/restaurant'
-            letter={'H'}
-          />
-          <SeedWrapper
-            to='/carte'
-            letter={'A'}
-          />
-          <SeedWrapper
-            to='/vins'
-            letter={'U'}
-            rotate
-          />
-        </Wrapper>
-      </BackGround>
-    );
-  };
-}
-
-export default withTheme(Home);
+export default Home;
