@@ -66,10 +66,10 @@ class PagesWrapper extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", () => this.updateDimensions);
+    window.addEventListener("resize", () => this.updateDimensions());
   };
   componentWillUnmount() {
-    window.removeEventListener("resize", () => this.updateDimensions);
+    window.removeEventListener("resize", () => this.updateDimensions());
   }
 
   updateDimensions() {
@@ -119,9 +119,9 @@ class PagesWrapper extends React.Component {
           </Switch>
         </Content>
         {
-           this.state.width > breakpoint
-          ? <SliderM gallery={galleries[location.pathname.slice(1)]}/>
-          : <SliderS gallery={galleries[location.pathname.slice(1)]}/>
+         this.state.width < breakpoint
+          ? <SliderS gallery={galleries[location.pathname.slice(1)]}/>
+          : <SliderM gallery={galleries[location.pathname.slice(1)]}/>
         }
       </Wrapper>
     );
