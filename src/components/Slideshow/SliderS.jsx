@@ -66,7 +66,11 @@ class SliderS extends React.Component {
   }
 
   componentWillMount() {
-    setInterval(this.slideToNextPicture, 3500)
+    this.slideSInterval = setInterval(this.slideToNextPicture, 3500)
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.slideSInterval);
   }
 
   slideToNextPicture = () => {

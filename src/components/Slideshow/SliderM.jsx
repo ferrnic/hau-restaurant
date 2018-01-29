@@ -94,8 +94,13 @@ class SliderM extends React.Component {
     }
   }
 
+
   componentWillMount() {
-    setInterval(this.handleClickNext, 3500)
+    this.slideMInterval = setInterval(this.handleClickNext, 3500)
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.slideMInterval);
   }
 
   _onMouseMove(e) {
