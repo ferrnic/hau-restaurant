@@ -1,13 +1,15 @@
 import React from 'react';
+import axios from 'axios';
+import cloudinary from 'cloudinary-core';
 import { ThemeProvider } from "styled-components";
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CloudinaryContext } from 'cloudinary-react';
 
-import axios from 'axios';
-
 import { theme } from "./theme";
 import Home from "./views/Home";
 import PagesWrapper from "./views/PagesWrapper";
+
+const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
 
 const orderByPublic_id= (a,b) => {
   if (a.public_id < b.public_id)
@@ -34,7 +36,7 @@ class App extends React.Component {
   fetchList = (tag) => {
     const _this = this;
 
-    return new Promise(function (resolve, reject) {
+    return new Promise(function (resolve) {
       axios.get(`https://res.cloudinary.com/hau/image/list/${tag}.json`)
         .then(res => {
           // order the list of images by public_id
@@ -48,14 +50,29 @@ class App extends React.Component {
           });
           resolve(orderedImagesList);
         })
-        .catch((error) => {
-          reject(error)
-        })
     });
   };
 
-  cacheImages = () => {
-    console.log('caching!')
+  createMBackgroundImageURL = (publicId) => {
+    const _this = this;
+
+    return new Promise(function (resolve) {
+      const t = new cloudinary.Transformation();
+      if (_this.state.width > theme.breakpoint) {
+        t.crop('scale').width(2000).quality('auto:good').fetchFormat('auto');
+      } else {
+        t.crop('scale').width(1000).quality('auto:good').fetchFormat('auto');
+      }
+      resolve(cloudinaryCore.url(publicId, t))
+    });
+  };
+
+  cacheImages = (orderedImagesList) => {
+    orderedImagesList.map(image => {
+      let img = new Image();
+      this.createMBackgroundImageURL(image.public_id)
+        .then(res => {img.src = res;})
+    });
   };
 
   componentDidMount() {
