@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import cloudinary from 'cloudinary-core';
 import { ThemeProvider } from "styled-components";
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CloudinaryContext } from 'cloudinary-react';
@@ -8,8 +7,7 @@ import { CloudinaryContext } from 'cloudinary-react';
 import { theme } from "./theme";
 import Home from "./views/Home";
 import PagesWrapper from "./views/PagesWrapper";
-
-const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
+import {createMBackgroundImage, createSBackgroundImage} from "./helpers";
 
 const orderByPublic_id= (a,b) => {
   if (a.public_id < b.public_id)
@@ -53,25 +51,25 @@ class App extends React.Component {
     });
   };
 
-  createMBackgroundImageURL = (publicId) => {
+  createBackgroundImageURL = (publicId) => {
     const _this = this;
-
     return new Promise(function (resolve) {
-      const t = new cloudinary.Transformation();
       if (_this.state.width > theme.breakpoint) {
-        t.crop('scale').width(2000).quality('auto:good').fetchFormat('auto');
+        resolve(createMBackgroundImage(publicId));
       } else {
-        t.crop('scale').width(1000).quality('auto:good').fetchFormat('auto');
+        resolve(createSBackgroundImage(publicId));
       }
-      resolve(cloudinaryCore.url(publicId, t))
     });
   };
 
   cacheImages = (orderedImagesList) => {
     orderedImagesList.map(image => {
       let img = new Image();
-      this.createMBackgroundImageURL(image.public_id)
-        .then(res => {img.src = res;})
+      this.createBackgroundImageURL(image.public_id)
+        .then(res => {
+          img.src = res;
+        });
+      return false;
     });
   };
 

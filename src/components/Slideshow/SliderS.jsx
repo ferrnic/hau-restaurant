@@ -1,18 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import cloudinary from 'cloudinary-core';
 import Slider from 'react-slick';
 import Swipeable from 'react-swipeable'
-
 import ArrowDown from "./ArrowDown";
 
-const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
-
-const createBackgroundImage = (publicId) => {
-  const t = new cloudinary.Transformation();
-  t.crop('scale').width(1000).quality('auto:good').fetchFormat('auto');
-  return cloudinaryCore.url(publicId, t);
-};
+import {createSBackgroundImage} from "../../helpers";
 
 const ImagesContainer = styled(Slider)`
   position: fixed;
@@ -31,7 +23,7 @@ const StyledImage = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
-  background: url(${p => createBackgroundImage(p.publicId)}) no-repeat center center;
+  background: url(${p => createSBackgroundImage(p.publicId)}) no-repeat center center;
   background-size: cover;
 `;
 

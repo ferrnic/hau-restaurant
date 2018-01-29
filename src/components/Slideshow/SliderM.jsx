@@ -1,20 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import cloudinary from 'cloudinary-core';
-
-const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'hau'});
-
-const createBackgroundImage = (publicId) => {
-  const t = new cloudinary.Transformation();
-  t.crop('scale').width(2000).quality('auto:good').fetchFormat('auto');
-  return cloudinaryCore.url(publicId, t);
-};
+import {createMBackgroundImage} from "../../helpers";
 
 const StyledImage = styled.div`
   position: absolute;
   height: 100vh;
   width: 100%;
-  background: url(${p => createBackgroundImage(p.publicId)}) no-repeat center center;
+  background: url(${p => createMBackgroundImage(p.publicId)}) no-repeat center center;
   background-size: cover;
   cursor: none;
 
@@ -93,7 +85,6 @@ class SliderM extends React.Component {
       mouseY: null,
     }
   }
-
 
   componentWillMount() {
     this.slideMInterval = setInterval(this.handleClickNext, 3500)
