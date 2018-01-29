@@ -20,6 +20,8 @@ const orderByPublic_id= (a,b) => {
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.fetchList = this.fetchList.bind(this);
+
     this.state = {
       galleries: {
         restaurant: [],
@@ -29,25 +31,48 @@ class App extends React.Component {
     }
   }
 
-  fetchList(tag) {
-    axios.get(`https://res.cloudinary.com/hau/image/list/${tag}.json`)
-      .then(res => {
-        // order the list of images by public_id
-        const orderedImagesList = res.data.resources.sort(orderByPublic_id);
-        this.setState({
-          galleries: {
-              ...this.state.galleries,
+  fetchList = (tag) => {
+    const _this = this;
+
+    return new Promise(function (resolve, reject) {
+      axios.get(`https://res.cloudinary.com/hau/image/list/${tag}.json`)
+        .then(res => {
+          // order the list of images by public_id
+          const orderedImagesList = res.data.resources.sort(orderByPublic_id);
+          _this.setState({
+            width: window.innerWidth,
+            galleries: {
+              ..._this.state.galleries,
               [tag]: orderedImagesList,
             }
-        });
-      });
-  }
+          });
+          resolve(orderedImagesList);
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    });
+  };
+
+  cacheImages = () => {
+    console.log('caching!')
+  };
 
   componentDidMount() {
-    this.fetchList('restaurant');
-    this.fetchList('vins');
-    this.fetchList('carte');
+    this.fetchList('restaurant').then((orderedImagesList) => {this.cacheImages(orderedImagesList)});
+    this.fetchList('carte').then((orderedImagesList) => {this.cacheImages(orderedImagesList)});
+    this.fetchList('vins').then((orderedImagesList) => {this.cacheImages(orderedImagesList)});
+
+    window.addEventListener("resize", () => this.updateDimensions());
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", () => this.updateDimensions());
+  }
+
+  updateDimensions() {
+    this.setState({width: window.innerWidth});
+  };
 
   render() {
     return (
@@ -61,6 +86,7 @@ class App extends React.Component {
                   <PagesWrapper
                     location={location}
                     galleries={this.state.galleries}
+                    width={this.state.width}
                   />
                 )}
               />

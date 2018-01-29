@@ -57,75 +57,55 @@ const LogoWrapper = styled(Link)`
   }
 `;
 
-class PagesWrapper extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      width: window.innerWidth,
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener("resize", () => this.updateDimensions());
-  };
-  componentWillUnmount() {
-    window.removeEventListener("resize", () => this.updateDimensions());
-  }
-
-  updateDimensions() {
-    this.setState({width: window.innerWidth});
-  };
-
-  render() {
-    const { location, galleries } = this.props;
-    const breakpoint = this.props.theme.breakpoints.medium.viewMinWidth;
-    return (
-      <Wrapper>
-        <LeftMenu>
-          <LogoWrapper to="/">
-            <TextLogo/>
-          </LogoWrapper>
-          <Navigation/>
-        </LeftMenu>
-        <Content>
-          <Switch>
-            <Route
-              path="/carte"
-              render={() => (
-                <Carte
-                  name='carte'
-                  currentMenu={carte}
-                />
-              )}
-            />
-            <Route
-              path="/vins"
-              render={() => (
-                <Carte
-                  name='vins'
-                  currentMenu={vins}
-                />
-              )}
-            />
-            <Route
-              path="/restaurant"
-              render={() => (
-                <RestaurantCarte
-                  name='restaurant'
-                  gallery={galleries.restaurant}
-                />
-              )}
-            />
-          </Switch>
-        </Content>
-        {
-         this.state.width < breakpoint
-          ? <SliderS gallery={galleries[location.pathname.slice(1)]}/>
-          : <SliderM gallery={galleries[location.pathname.slice(1)]}/>
-        }
-      </Wrapper>
-    );
-    }
-}
+const PagesWrapper = (props) => {
+  const { location, galleries } = props;
+  const breakpoint = props.theme.breakpoints.medium.viewMinWidth;
+  return (
+    <Wrapper>
+      <LeftMenu>
+        <LogoWrapper to="/">
+          <TextLogo/>
+        </LogoWrapper>
+        <Navigation/>
+      </LeftMenu>
+      <Content>
+        <Switch>
+          <Route
+            path="/carte"
+            render={() => (
+              <Carte
+                name='carte'
+                currentMenu={carte}
+              />
+            )}
+          />
+          <Route
+            path="/vins"
+            render={() => (
+              <Carte
+                name='vins'
+                currentMenu={vins}
+              />
+            )}
+          />
+          <Route
+            path="/restaurant"
+            render={() => (
+              <RestaurantCarte
+                name='restaurant'
+                gallery={galleries.restaurant}
+              />
+            )}
+          />
+        </Switch>
+      </Content>
+      {
+       props.width < breakpoint
+        ? <SliderS gallery={galleries[location.pathname.slice(1)]}/>
+        : <SliderM gallery={galleries[location.pathname.slice(1)]}/>
+      }
+    </Wrapper>
+  );
+};
 
 export default withTheme(PagesWrapper);
