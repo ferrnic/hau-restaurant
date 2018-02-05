@@ -86,7 +86,7 @@ const Home = () => (
       muted
       playsInline
     >
-      <Transformation streaming_profile="full_hd"/>
+      {/*<Transformation streaming_profile="full_hd"/>*/}
       <Transformation format="ogv"/>
       <Transformation format="webm"/>
       <Transformation format="mp4"/>
