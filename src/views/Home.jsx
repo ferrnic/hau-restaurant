@@ -86,10 +86,12 @@ const Home = () => (
       muted
       playsInline
     >
-      {/*<Transformation streaming_profile="full_hd"/>*/}
-      <Transformation format="ogv"/>
-      <Transformation format="webm"/>
-      <Transformation format="mp4"/>
+      <Transformation audio_codec="none" video_codec="auto" />
+      <Transformation streaming_profile="full_hd" />
+
+      {/*<Transformation format="ogv" audio_codec="none"/>*/}
+      {/*<Transformation format="webm" audio_codec="none"/>*/}
+      {/*<Transformation format="mp4" audio_codec="none"/>*/}
     </StyledVideo>
     <Wrapper>
       <SeedWrapper
