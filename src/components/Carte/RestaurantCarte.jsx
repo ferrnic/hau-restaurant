@@ -37,7 +37,7 @@ const RestaurantCarte = (props) => {
           <Items>
             <ItemLine>
               <ItemName>
-                Fermé le mardi, le mercredi, et le samedi midi.
+                Fermé le lundi midi, mardi, mercredi, jeudi midi et le samedi midi.
               </ItemName>
             </ItemLine>
           </Items>
