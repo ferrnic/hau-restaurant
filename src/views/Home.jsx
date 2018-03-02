@@ -78,7 +78,7 @@ const Home = () => (
   <BackGround>
     <StyledVideo
       cloudName="hau"
-      publicId="hau-automn-1"
+      publicId="current"
       autoPlay
       loop
       poster={null}
@@ -87,8 +87,8 @@ const Home = () => (
       playsInline
     >
       <Transformation audio_codec="none" video_codec="auto" />
-      <Transformation streaming_profile="full_hd" />
-
+      {/* <Transformation audio_codec="none" video_codec="auto" />*/}
+      {/* <Transformation streaming_profile="full_hd" />*/}
       {/*<Transformation format="ogv" audio_codec="none"/>*/}
       {/*<Transformation format="webm" audio_codec="none"/>*/}
       {/*<Transformation format="mp4" audio_codec="none"/>*/}
