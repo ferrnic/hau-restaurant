@@ -158,7 +158,6 @@ export const WIPvins = [
       { type: "h3", name: "Italie"},
       { name: "Blanc de Blanc - Alessandro Viola - Sicilia", price: 39 },
       { name: "Prosecco - Sèttolo - Treviso DOC Fratelli Collavo ( BIO )", price: 31 },
-      { name: "Spumante Metodo Classico Brut Frecciarossa 2008", price: 52 },
     ]
   },{
     name: "les vins blancs",
@@ -191,7 +190,7 @@ export const WIPvins = [
 export const vins = [
   {
     items: [
-      { name: "La carte de vin biologique et naturelle est à découvrir au restaurant."},
+      { name: "La carte de vin nature et biologique est à découvrir au restaurant."},
     ]
   },
 ];
