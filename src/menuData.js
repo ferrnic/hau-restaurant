@@ -105,7 +105,7 @@ export const carte = [
       { name: "Nouilles sautées au soja", price: 8 },
     ],
   },{
-    name: "DEsserts",
+    name: "Desserts",
     items: [
       { name: "Glace vanille et confit de gingembre", price: 6 },
       { name: "Banane grillée au lait de coco", price: 6.50 },
