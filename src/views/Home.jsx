@@ -74,11 +74,31 @@ const StyledVideo = styled(Video)`
   }
 `;
 
+// avalaible month are:
+// february
+// march
+// may
+// october
+const availableMonths = {
+  1: 'february',
+  2: 'february',
+  3: 'march',
+  4: 'may',
+  5: 'may',
+  6: 'may',
+  7: 'may',
+  8: 'may',
+  9: 'october',
+  10: 'october',
+  11: 'october',
+  12: 'march'
+};
+
 const Home = () => (
   <BackGround>
     <StyledVideo
       cloudName="hau"
-      publicId="may"
+      publicId={availableMonths[new Date().getMonth()]}
       autoPlay
       loop
       poster={null}
