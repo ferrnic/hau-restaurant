@@ -10,6 +10,8 @@ const BackGround = styled.div`
   position: relative;  
   width: 100vw;
   height: 100vh;
+  background: ${props => `url(https://res.cloudinary.com/hau/video/upload/c_scale,so_0,h_1000,q_80/${props.month}.jpg)`} no-repeat center center fixed;
+  background-size: cover;
   background-color: ${props => props.theme.colors.dark};
   display: flex;
   justify-content: center;
@@ -94,41 +96,44 @@ const availableMonths = {
   12: 'march'
 };
 
-const Home = () => (
-  <BackGround>
-    <StyledVideo
-      cloudName="hau"
-      publicId={availableMonths[new Date().getMonth()]}
-      autoPlay
-      loop
-      poster={null}
-      onClick={e => e.preventDefault()}
-      muted
-      playsInline
-    >
-      <Transformation audio_codec="none" video_codec="auto" />
-      {/* <Transformation audio_codec="none" video_codec="auto" />*/}
-      {/* <Transformation streaming_profile="full_hd" />*/}
-      {/*<Transformation format="ogv" audio_codec="none"/>*/}
-      {/*<Transformation format="webm" audio_codec="none"/>*/}
-      {/*<Transformation format="mp4" audio_codec="none"/>*/}
-    </StyledVideo>
-    <Wrapper>
-      <SeedWrapper
-        to='/restaurant'
-        letter={'H'}
-      />
-      <SeedWrapper
-        to='/carte'
-        letter={'A'}
-      />
-      <SeedWrapper
-        to='/vins'
-        letter={'U'}
-        rotate
-      />
-    </Wrapper>
-  </BackGround>
-);
+const Home = () => {
+  const month = availableMonths[new Date().getMonth()];
+  return (
+    <BackGround month={month}>
+      <StyledVideo
+        cloudName="hau"
+        publicId={month}
+        autoPlay
+        loop
+        poster={null}
+        onClick={e => e.preventDefault()}
+        muted
+        playsInline
+      >
+        <Transformation audio_codec="none" video_codec="auto"/>
+        {/* <Transformation audio_codec="none" video_codec="auto" />*/}
+        {/* <Transformation streaming_profile="full_hd" />*/}
+        {/*<Transformation format="ogv" audio_codec="none"/>*/}
+        {/*<Transformation format="webm" audio_codec="none"/>*/}
+        {/*<Transformation format="mp4" audio_codec="none"/>*/}
+      </StyledVideo>
+      <Wrapper>
+        <SeedWrapper
+          to='/restaurant'
+          letter={'H'}
+        />
+        <SeedWrapper
+          to='/carte'
+          letter={'A'}
+        />
+        <SeedWrapper
+          to='/vins'
+          letter={'U'}
+          rotate
+        />
+      </Wrapper>
+    </BackGround>
+  );
+};
 
 export default Home;
