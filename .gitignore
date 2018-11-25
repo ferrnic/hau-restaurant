@@ -28,3 +28,8 @@ yarn-error.log*
 # misc
 .env
 .lock
+
+# DS_Store
+.DS_Store
+
+
