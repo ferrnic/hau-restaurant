@@ -82,27 +82,27 @@ const StyledVideo = styled(Video)`
 // may
 // october
 const availableMonths = {
+  0: 'february',
   1: 'february',
-  2: 'february',
-  3: 'march',
+  2: 'march',
+  3: 'may',
   4: 'may',
   5: 'may',
   6: 'may',
   7: 'may',
-  8: 'may',
+  8: 'october',
   9: 'october',
   10: 'october',
-  11: 'october',
-  12: 'march'
+  11: 'march'
 };
 
 const Home = () => {
-  const month = availableMonths[new Date().getMonth()];
+  const monthNumber = availableMonths[new Date().getMonth()];
   return (
-    <BackGround month={month}>
+    <BackGround month={monthNumber}>
       <StyledVideo
         cloudName="hau"
-        publicId={month}
+        publicId={monthNumber}
         autoPlay
         loop
         poster={null}
@@ -111,11 +111,6 @@ const Home = () => {
         playsInline
       >
         <Transformation audio_codec="none" video_codec="auto"/>
-        {/* <Transformation audio_codec="none" video_codec="auto" />*/}
-        {/* <Transformation streaming_profile="full_hd" />*/}
-        {/*<Transformation format="ogv" audio_codec="none"/>*/}
-        {/*<Transformation format="webm" audio_codec="none"/>*/}
-        {/*<Transformation format="mp4" audio_codec="none"/>*/}
       </StyledVideo>
       <Wrapper>
         <SeedWrapper
