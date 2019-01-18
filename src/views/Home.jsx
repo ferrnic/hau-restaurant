@@ -82,8 +82,11 @@ const StyledVideo = styled(Video)`
 // may
 // october
 const availableMonths = {
-  0: 'february',
-  1: 'february',
+  // override month because it's not snowing ^^
+  // 0: 'february',
+  // 1: 'february',
+  0: 'march',
+  1: 'march',
   2: 'march',
   3: 'may',
   4: 'may',
