@@ -5,7 +5,7 @@ var path1 = __dirname;
 var path2 = './';
 
 
-const localRoot = path1
+const localRoot = './build'
 const remoteRoot = '/test/'
 const config = {
   host: process.env.HOST,
