@@ -1,7 +1,11 @@
 const FtpDeploy = require('ftp-deploy')
 const ftpDeploy = new FtpDeploy()
 
-const localRoot = __dirname + '/build'
+var path1 = __dirname;
+var path2 = './';
+
+
+const localRoot = path1
 const remoteRoot = '/test/'
 const config = {
   host: process.env.HOST,
