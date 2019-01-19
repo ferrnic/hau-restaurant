@@ -4,7 +4,9 @@ const ftpDeploy = new FtpDeploy()
 
 const localRoot = __dirname + '/build'
 const remoteRoot = '/test/'
-
+console.log('process.env.HOST => ', process.env.HOST);
+console.log('process.env.USER => ', process.env.USER);
+console.log('process.env.PASSWORD => ', process.env.PASSWORD);
 const config = {
   HOST: process.env.HOST,
   PASSWORD: process.env.PASSWORD,
