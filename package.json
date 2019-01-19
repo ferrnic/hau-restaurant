@@ -16,9 +16,10 @@
   },
   "scripts": {
     "start": "NODE_ENVNODE_ENV=test react-scripts start",
+    "create-env": "node create-env.js",
     "build": "react-scripts build",
     "deploy": "node deploy.js",
-    "build-and-deploy": "npm run build && npm run deploy"
+    "build-and-deploy": "create-env && npm run deploy && npm run build"
   },
   "devDependencies": {
     "ftp-deploy": "^2.3.0"
