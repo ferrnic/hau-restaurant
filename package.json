@@ -19,7 +19,7 @@
     "create-env": "node create-env.js",
     "build": "react-scripts build",
     "deploy": "node deploy.js",
-    "build-and-deploy": "create-env && npm run deploy && npm run build"
+    "build-and-deploy": "npm run create-env && npm run deploy && npm run build"
   },
   "devDependencies": {
     "ftp-deploy": "^2.3.0"
