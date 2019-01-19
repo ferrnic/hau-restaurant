@@ -1,18 +1,8 @@
 const FtpDeploy = require('ftp-deploy')
 const ftpDeploy = new FtpDeploy()
-const fs = require('fs')
-const path = require('path')
-
-
-var path1 = __dirname;
-var path2 = './';
-
-const folderPath = './build'
-fs.readdirSync(folderPath)
-
 
 const localRoot = './build'
-const remoteRoot = '/test/'
+const remoteRoot = '/www/'
 const config = {
   host: process.env.HOST,
   password: process.env.PASSWORD,
