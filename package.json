@@ -15,9 +15,12 @@
     "styled-components": "^2.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENVNODE_ENV=test react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "deploy": "node deploy.js",
+    "build-and-deploy": "npm run build && npm run deploy"
+  },
+  "devDependencies": {
+    "ftp-deploy": "^2.3.0"
   }
 }
