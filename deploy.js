@@ -8,9 +8,9 @@ const USER = process.env.USER;
 const localRoot = __dirname + '/build'
 const remoteRoot = '/test/'
 const config = {
-  HOST: HOST,
-  PASSWORD: PASSWORD,
-  USER: USER,
+  host: HOST,
+  password: PASSWORD,
+  user: USER,
   localRoot: localRoot,
   remoteRoot: remoteRoot,
   include: [ '*', '**/*' ],
