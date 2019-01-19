@@ -1,16 +1,13 @@
 const FtpDeploy = require('ftp-deploy')
 const ftpDeploy = new FtpDeploy()
 
-const HOST = process.env.HOST;
-const PASSWORD = process.env.PASSWORD;
-const USER = process.env.USER;
-
-const localRoot = __dirname + '/build'
+//const localRoot = __dirname + '/build'
+const localRoot = __dirname
 const remoteRoot = '/test/'
 const config = {
-  host: HOST,
-  password: PASSWORD,
-  user: USER,
+  host: process.env.HOST,
+  password: process.env.PASSWORD,
+  user: process.env.USER,
   localRoot: localRoot,
   remoteRoot: remoteRoot,
   include: [ '*', '**/*' ],
