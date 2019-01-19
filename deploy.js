@@ -1,8 +1,14 @@
 const FtpDeploy = require('ftp-deploy')
 const ftpDeploy = new FtpDeploy()
+const fs = require('fs')
+const path = require('path')
+
 
 var path1 = __dirname;
 var path2 = './';
+
+const folderPath = './build'
+fs.readdirSync(folderPath)
 
 
 const localRoot = './build'
