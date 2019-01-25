@@ -1,0 +1,11 @@
+create-env:
+  script: "node create-env.js"
+
+build:
+  script: "react-scripts build"
+
+deploy:
+  script: "node deploy.js"
+
+build-and-deploy:
+  script: "npm run create-env && npm run build && npm run deploy"

@@ -15,7 +15,7 @@
     "styled-components": "^2.2.1"
   },
   "scripts": {
-    "start": "NODE_ENVNODE_ENV=test react-scripts start",
+    "start": "react-scripts start",
     "create-env": "node create-env.js",
     "build": "react-scripts build",
     "deploy": "node deploy.js",
