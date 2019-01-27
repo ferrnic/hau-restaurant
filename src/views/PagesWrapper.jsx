@@ -26,12 +26,13 @@ const Content = styled.div`
   width: calc(100vw - 110px);
   overflow-y: scroll;
   flex-shrink: 0; // does not shrink
-  padding-bottom: 30px;
+  padding-bottom: calc(15vh + 30px);
   
   @media (min-width: ${p => p.theme.breakpoints.medium.viewMinWidth}px) {
     width: 50vw;
     min-width: ${p => p.theme.breakpoints.medium.contentSize - 110}px;
     max-width: ${p => p.theme.breakpoints.medium.contentSize - 110}px;
+    padding-bottom: 30px;
   }
 `;
 
@@ -91,10 +92,7 @@ const PagesWrapper = (props) => {
           <Route
             path="/restaurant"
             render={() => (
-              <RestaurantCarte
-                name='restaurant'
-                gallery={galleries.restaurant}
-              />
+              <RestaurantCarte name='restaurant' />
             )}
           />
         </Switch>
