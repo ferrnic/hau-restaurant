@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Helmet} from "react-helmet";
 
 import {Content, ContentSection, H1, ItemLine, ItemName, Items, SectionName, Wrapper} from "./index";
 
@@ -14,10 +15,14 @@ const Credit = styled(ContentSection)`
 `;
 
 const RestaurantCarte = (props) => {
-  const {name} = props;
+  const {name, title, description} = props;
 
   return (
     <Wrapper>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
       <H1>{name}</H1>
       <Content>
         <ContentSection>

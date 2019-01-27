@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Helmet} from "react-helmet";
 
 export const Wrapper = styled.div`
   top: 0;
@@ -77,10 +78,16 @@ const Carte = (props) => {
   const {
     name,
     currentMenu,
+    title,
+    description
   } = props;
 
   return (
     <Wrapper>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
       <H1>{name}</H1>
       <Content>
         {currentMenu.map((section, index) =>

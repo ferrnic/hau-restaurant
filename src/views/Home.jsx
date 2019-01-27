@@ -5,6 +5,8 @@ import { Video, Transformation } from 'cloudinary-react';
 import { StyledSeed } from '../components/HomeSeed/Seed';
 import HomeSeed from "../components/HomeSeed";
 import {StyledLetter} from "../components/HomeSeed/Letter";
+import {Helmet} from "react-helmet";
+import {homeDescription, homeTitle} from "../menuData";
 
 const BackGround = styled.div`
   position: relative;  
@@ -103,6 +105,10 @@ const Home = () => {
   const monthNumber = availableMonths[new Date().getMonth()];
   return (
     <BackGround month={monthNumber}>
+      <Helmet>
+        <title>{homeTitle}</title>
+        <meta name="description" content={homeDescription} />
+      </Helmet>
       <StyledVideo
         cloudName="hau"
         publicId={monthNumber}
