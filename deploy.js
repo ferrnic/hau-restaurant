@@ -1,5 +1,5 @@
-const FtpDeploy = require('ftp-deploy')
-const ftpDeploy = new FtpDeploy()
+const FtpDeploy = require('ftp-deploy');
+const ftpDeploy = new FtpDeploy();
 
 const config = {
   host: process.env.HOST,
@@ -7,15 +7,11 @@ const config = {
   user: process.env.USER,
   localRoot: './build',
   remoteRoot: '/www/',
+  deleteRemote: true,
   include: [ '*', '**/*' ],
-  exclude: [ 'dist/**/*.map' ],
-}
-console.log('--------- will deploy with config => ', config);
-ftpDeploy.deploy(config, (err, res) => {
-  if (err) {
-    console.log(err)
-  }
-  else {
-    console.log(res);
-  }
-});
+  exclude: [ '**/*.map' ],
+};
+
+ftpDeploy.deploy(config)
+  .then(res => console.log('finished:', res))
+  .catch(err => console.log(err));
