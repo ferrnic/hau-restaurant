@@ -35,10 +35,17 @@ class App extends React.Component {
     const _this = this;
 
     return new Promise(function (resolve) {
-      axios.get(`https://res.cloudinary.com/hau/image/list/${tag}.json`)
+      axios.get(`https://res.cloudinary.com/hau/image/list/${tag}.json?context=true`)
         .then(res => {
+          // extract alt text or set a default empty string
           // order the list of images by public_id
-          const orderedImagesList = res.data.resources.sort(orderByPublic_id);
+          const orderedImagesList = res.data.resources
+            .map(image => ({
+              ...image,
+              alt: (image.context && image.context.custom && image.context.custom.alt) || ''
+            }))
+            .sort(orderByPublic_id);
+
           _this.setState({
             width: window.innerWidth,
             galleries: {

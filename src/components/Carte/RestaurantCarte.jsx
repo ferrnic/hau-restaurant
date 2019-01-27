@@ -14,9 +14,7 @@ const Credit = styled(ContentSection)`
 `;
 
 const RestaurantCarte = (props) => {
-  const {
-    name,
-  } = props;
+  const {name} = props;
 
   return (
     <Wrapper>
