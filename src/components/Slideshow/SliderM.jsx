@@ -120,26 +120,27 @@ class SliderM extends React.Component {
   };
 
   render() {
+    const {gallery} = this.props;
+    const {mouseY, mouseX, currentPicture} = this.state;
     return (
       <Wrapper onMouseMove={this._onMouseMove.bind(this)}>
         <ArrowContainer>
           <LeftContainer onClick={this.handleClickPrevious} />
           <RightContainer onClick={this.handleClickNext} />
           <Arrow
-            y={this.state.mouseY}
-            x={this.state.mouseX}
+            y={mouseY}
+            x={mouseX}
           />
         </ArrowContainer>
-        {
-          this.props.gallery.map((data, index) => (
-            <StyledImage
-              key={data.public_id}
-              publicId={data.public_id}
-              isCurrent={index === this.state.currentPicture}
-            >
-            </StyledImage>
-          ))
-        }
+        {gallery.map(({ public_id, alt }, index) =>
+          <StyledImage
+            key={public_id}
+            publicId={public_id}
+            isCurrent={index === currentPicture}
+            role="img"
+            aria-label={alt}
+          />
+        )}
       </Wrapper>
     );
   }

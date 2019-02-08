@@ -4,7 +4,16 @@ import styled, {withTheme} from 'styled-components';
 
 import Navigation from '../components/Navigation';
 import Carte from '../components/Carte';
-import { carte, vins } from '../menuData';
+import {
+  carte,
+  carteDescription,
+  carteTitle,
+  restaurantDescription,
+  restaurantTitle,
+  vins,
+  vinsDescription,
+  vinsTitle
+} from '../menuData';
 import TextLogo from '../components/TextLogo';
 import SliderM from "../components/Slideshow/SliderM";
 import RestaurantCarte from "../components/Carte/RestaurantCarte";
@@ -26,12 +35,13 @@ const Content = styled.div`
   width: calc(100vw - 110px);
   overflow-y: scroll;
   flex-shrink: 0; // does not shrink
-  padding-bottom: 30px;
+  padding-bottom: calc(15vh + 30px);
   
   @media (min-width: ${p => p.theme.breakpoints.medium.viewMinWidth}px) {
     width: 50vw;
     min-width: ${p => p.theme.breakpoints.medium.contentSize - 110}px;
     max-width: ${p => p.theme.breakpoints.medium.contentSize - 110}px;
+    padding-bottom: 30px;
   }
 `;
 
@@ -76,6 +86,8 @@ const PagesWrapper = (props) => {
               <Carte
                 name='carte'
                 currentMenu={carte}
+                title={carteTitle}
+                description={carteDescription}
               />
             )}
           />
@@ -85,6 +97,8 @@ const PagesWrapper = (props) => {
               <Carte
                 name='vins'
                 currentMenu={vins}
+                title={vinsTitle}
+                description={vinsDescription}
               />
             )}
           />
@@ -93,7 +107,8 @@ const PagesWrapper = (props) => {
             render={() => (
               <RestaurantCarte
                 name='restaurant'
-                gallery={galleries.restaurant}
+                title={restaurantTitle}
+                description={restaurantDescription}
               />
             )}
           />

@@ -1,3 +1,18 @@
+export const homeTitle = "Hau Restaurant";
+export const homeDescription = "Chez Hau, on mange une cuisine fine aux saveurs vietnamienne," +
+  " fraîche et toujours repensée, accompagnée d’une belle carte de vin biologique et naturelle." +
+  " Un voyage gastronomique proposé à midi comme au soir dans un cadre unique rempli d’histoire" +
+  " dans la ville de Bruxelles";
+
+export const carteTitle = "Hau Restaurant | La carte";
+export const carteDescription = "La carte du Hau restaurant : une cuisine fine aux saveurs vietnamienne, fraîche et toujours repensée.";
+
+export const vinsTitle = "Hau Restaurant | Les vins";
+export const vinsDescription = "La carte de vin nature et biologique à découvrir au restaurant";
+
+export const restaurantTitle = "Hau Restaurant | Le restaurant";
+export const restaurantDescription = "Horaires et ouvertures, adresse et contact du Hau Restaurant";
+
 export const carte = [
   {
     name: "Apéritifs",

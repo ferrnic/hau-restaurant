@@ -18,7 +18,6 @@ const ImagesContainer = styled(Slider)`
     height: 100%;
   }
 `;
-
 const StyledImage = styled.div`
   position: relative;
   height: 100%;
@@ -104,11 +103,13 @@ class SliderS extends React.Component {
   }
 
   render() {
+    const {sliderOpen, currentPicture} = this.state;
+    const {gallery} = this.props;
     return (
       <Wrapper>
         <SlideCloser
           onClick={this.handleCloseSlider}
-          open={this.state.sliderOpen}
+          open={sliderOpen}
         >
           <StyledArrowDown />
         </SlideCloser>
@@ -116,18 +117,18 @@ class SliderS extends React.Component {
           onSwipedUp={() => this.swipedUp()}
           onSwipedDown={() => this.swipedDown()}
         >
-          <ImagesContainer open={this.state.sliderOpen} {...this.settings}>
-            {
-              this.props.gallery.map((data, index) => (
-                <StyledImage
-                  open={this.state.sliderOpen}
-                  onClick={e => this.handleClick(e)}
-                  key={data.public_id}
-                  publicId={data.public_id}
-                  isCurrent={index === this.state.currentPicture}
-                />
-              ))
-            }
+          <ImagesContainer open={sliderOpen} {...this.settings}>
+            {gallery.map(({ public_id, alt }, index) =>
+              <StyledImage
+                open={sliderOpen}
+                onClick={e => this.handleClick(e)}
+                key={public_id}
+                publicId={public_id}
+                isCurrent={index === currentPicture}
+                role="img"
+                aria-label={alt}
+              />
+            )}
           </ImagesContainer>
         </Swipeable>
       </Wrapper>
