@@ -13,6 +13,10 @@ const Credit = styled(ContentSection)`
   opacity: 0.7;
 `;
 
+const Tough = styled.strong`
+  font-weight: normal
+`;
+
 const RestaurantCarte = (props) => {
   const {
     name,
@@ -26,8 +30,8 @@ const RestaurantCarte = (props) => {
           <Items>
             <ItemLine>
               <ItemName>
-                Bienvenue chez Hau. <br />
-                Vietnamien d’origine, chez Hau on y mange sa cuisine. Dans ce cadre unique rempli de saveurs et d’histoire, le chef vous propose une convivialité bien à lui : une cuisine fine aux saveurs asiatiques, fraîche, et toujours repensée, accompagnée d’une belle carte de vin biologique et naturelle. Un voyage gastronomique proposé à midi comme au soir. <br />
+                <Tough>Bienvenue chez Hau.</Tough> <br />
+                <Tough>Vietnamien</Tough> d’origine, chez <Tough>Hau</Tough> on y mange sa <Tough>cuisine</Tough>. Dans ce cadre unique rempli de <Tough>saveurs et d’histoire</Tough>, le chef vous propose une convivialité bien à lui : une <Tough>cuisine fine aux saveurs asiatiques, fraîche</Tough>, et toujours repensée, accompagnée d’une belle carte de <Tough>vin biologique et naturelle</Tough>. Un voyage <Tough>gasonomique</Tough> proposé à <Tough>midi</Tough> comme au <Tough>soir</Tough>. <br />
                 <Link href={process.env.PUBLIC_URL + "/chronique_pierre_lecomte.pdf"} download>Lisez la chronique de Pierre Lecomte sur le restaurant de Hau</Link>.
               </ItemName>
             </ItemLine>
