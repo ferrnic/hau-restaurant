@@ -15,147 +15,17 @@ export const restaurantDescription = "Horaires et ouvertures, adresse et contact
 
 export const carte = [
   {
-    name: "Apéritifs",
+    name: "Nouveauté",
     items: [
-      { name: "Kir", price: 5 },
-      { name: "Vin de lychee", price: 5 },
-      { name: "Sherry", price: 5 },
-      { name: "Porto", price: 5 },
-      { name: "Pineau des Charentes", price: 5 },
-      { name: "Martini blanc, rouge", price: 5 },
-      { name: "Pastis", price: 9 },
-      { name: "Campari soda, orange", price: 9 },
-      { name: "Mandarine tonic", price: 9 },
-      { name: "Gin tonic", price: 9 },
-      { name: "Coupe de Champagne", price: 9 },
-      { name: "Kir Royal", price: 9 },
+      { name: "Un menu unique à 38 euros à la vietnamienne!\n" +
+          "\n" +
+          "HAU vous propose un voyage culinaire en hommage à son pays, le Viêtnam : tous les plats d’un repas seront servis en même temps !\n" +
+          "\n" +
+          "Sa composition est repensée régulièrement afin de vous servir des produits frais et de qualités (entrée, potages, plusieurs plats différents, dessert). \n" +
+          "\n" +
+          "Au plaisir de partager cette expérience avec vous 🙂 !" },
     ],
-  },{
-    name: "Potages",
-    items: [
-      { name: "Potage aux cheveux d’ange et au poulet", price:  7 },
-      { name: "Potage piquant au poivre oriental", price: 7 },
-      { name: "Potage aux raviolis de scampis", price: 8 },
-      { name: "Potage saïgonnais", price: 8 },
-      { name: "Potage du chef au saté", price: 8 },
-    ],
-  },{
-    name: "Entrées Froides",
-    items: [
-      { name: "Boeuf cru piquant", price: 13 },
-      { name: "Salade de cheveux d’ange", price: 10 },
-      { name: "Salade d’ananas et de scampis", price: 12 },
-    ],
-  },{
-    name: "EntréeS vapeurs",
-    items: [
-      { name: "Bouchées de scampis", price: 8 },
-      { name: "Bouchées de porc et de scampis", price:  8 },
-      { name: "Boutons de roses", price: 8 },
-      { name: "Filet de poulet aux feuilles de bananier", price: 9 },
-      { name: "Crêpes tonkinoises", price: 9 },
-      { name: "Panaché vapeur", price: 11 },
-    ],
-  },{
-    name: "EntréeS Chaudes",
-    items: [
-      { name: "Raviolis croustillants", price: 8 },
-      { name: "Croquettes vietnamiennes", price: 9 },
-      { name: "Brochettes de filet de poulet au saté", price: 8 },
-      { name: "Aile de poulet farcie", price: 7 },
-      { name: "Croustillons de scampis", price: 9 },
-      { name: "Scampis aux épices", price: 12 },
-      { name: "Assiette Hau ( 2 personnes )", price: 24 },
-    ],
-  },{
-    name: "Fruits de mer",
-    items: [
-      { name: "Scampis piquants aux aromates", price: 18 },
-    { name: "Scampis au saté et au lait de coco", price: 18 },
-      { name: "Scampis grillés au saté", price: 18 },
-      { name: "Scampis grillés à la citronnelle", price: 18 },
-    ],
-  },{
-    name: "Poulet",
-    items: [
-      { name: "Poulet caramélisé au gingembre", price: 14 },
-      { name: "Poulet grillé au curry rouge et lait de coco", price: 14 },
-      { name: "Poulet grillé à la citronnelle", price: 14 },
-    ],
-  },{
-    name: "Canard",
-    items: [
-      { name: "Canard cantonnais", price: 18 },
-      { name: "Canard à l’impériale", price: 18 },
-      { name: "Canard laqué aux crêpes", price: 20 },
-      { name: "Magret de canard grillé aux cinq parfums et aux grains de sésame", price: 20 },
-    ],
-  },{
-    name: "Boeuf",
-    items: [
-      { name: "Boeuf lúc lác", price: 18 },
-      { name: "Boeuf piquant au citron vert", price: 18 },
-      { name: "Boeuf au gingembre et grains de sésame", price: 18 },
-      { name: "Boeuf grillé aux cinq parfums", price: 18 },
-    ],
-  },{
-    name: "Porc",
-    items: [
-      { name: "Porc aux épices, citronnelle et galanga", price: 14 },
-    ],
-  },{
-    name: "Nouilles et riz",
-    items: [
-  
-      { name: "Riz sauté aux crevettes, porc laqué et poulet", price: 15 },
-      { name: "Riz sauté aux scampis", price: 18 },
-      { name: "Nouilles aux légumes", price: 12 },
-      { name: "Nouilles aux sept merveilles", price: 15 },
-    ],
-  },{
-    name: "Accompagnements",
-    items: [
-      { name: "Riz sauté aux oeufs", price: 8 },
-      { name: "Assiette végétarienne", price: 10 },
-      { name: "Nouilles sautées au soja", price: 8 },
-    ],
-  },{
-    name: "Desserts",
-    items: [
-      { name: "Glace vanille et confit de gingembre", price: 6 },
-      { name: "Banane grillée au lait de coco", price: 6.50 },
-      { name: "Beignet à la noix de coco", price: 6.50 },
-      { name: "Beignet de banane au miel", price: 8 },
-      { name: "Assortiment de sorbet", price: 7.50 },
-  
-    { name: "Supplément de 2,50 euros pour un flambage à l’alcool" },
-    ],
-  },{
-    name: "Boissons",
-    items: [
-      { name: "Eau plate 0,25 L", price: 3 },
-      { name: "Eau plate 0,5 L", price: 5 },
-      { name: "Eau plate 1 L", price: 7.50 },
-      { name: "San Pellegrino 0,5 L", price: 5 },
-      { name: "San Pellegrino 1 L", price: 9 },
-  
-      { name: "Coca, Coca light, Parasol orange, Ice Tea, Tonic", price: 3 },
-      { name: "Jus de pomme Bio", price: 3.50 },
-    ],
-  },{
-    name: "Bières",
-    items: [
-      { name: "Bertinchamps 0,5 L ( Blonde, Brune, Triple )", price: 9 },
-    ],
-  },{
-    name: "Boissons chaudes",
-    items: [
-      { name: "Thé & tisane", price: 3 },
-      { name: "Café", price: 3.50 },
-      { name: "Cappuccino", price: 4 },
-      { name: "Irish Coffee", price: 12 },
-    ],
-  },{
+  }, {
     name: "Info allergènes",
     items: [
       { name: "Chers clients, si vous désirez des informations sur la présence éventuelle d’allergène dans nos produits / préparations veuillez contacter le personnel. Attention la composition des produits et préparations, peut varier. Merci." },

@@ -67,6 +67,7 @@ export const ItemLine = styled.li`
 `;
 
 export const ItemName = styled.span`
+  white-space: pre-line
 `;
 
 export const ItemPrice = styled.span`
