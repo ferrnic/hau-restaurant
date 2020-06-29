@@ -45,7 +45,7 @@ const RestaurantCarte = (props) => {
           <Items>
             <ItemLine>
               <ItemName>
-                Fermé le mardi, mercredi et le samedi midi. Le restaurant sera fermé du 7 juillet au 31 juillet inclus.
+                Fermé le mardi, mercredi et le samedi midi.
               </ItemName>
             </ItemLine>
           </Items>
@@ -55,7 +55,7 @@ const RestaurantCarte = (props) => {
           <Items>
             <ItemLine>
               <ItemName>
-                Vous pouvez nous joindre sur <Link href="https://www.facebook.com/haurestaurant/" target="_blank">Facebook</Link> ou par téléphone au <Link href="tel:003227629980">+32 2 762 99 80</Link>.
+                Vous pouvez suivre nos activités sur <Link href="https://www.facebook.com/haurestaurant/" target="_blank">Facebook</Link>. Les réservations se font uniquement par téléphone au <Link href="tel:003227629980">+32 2 762 99 80</Link>.
               </ItemName>
             </ItemLine>
           </Items>
