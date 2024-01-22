@@ -84,7 +84,7 @@ const RestaurantCarte = (props) => {
           <Items>
             <ItemLine>
               <ItemName>
-                hau-restaurant.com is designed by <Link target="_blank" href="http://www.michikovandevelde.com">Michiko Van de Velde</Link> and developed by <Link target="_blank" href="http://camillegabrieli.com">Camille Gabrieli</Link>. Pictures by <Link target="_blank" href="mailto:samon.vdv@gmail.com">Samon Van de Velde</Link>.
+                hau-restaurant.com is designed by <Link target="_blank" href="http://www.michikovandevelde.com">Michiko Van de Velde</Link>. Pictures by <Link target="_blank" href="mailto:samon.vdv@gmail.com">Samon Van de Velde</Link>.
               </ItemName>
             </ItemLine>
           </Items>
