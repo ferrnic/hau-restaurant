@@ -17,7 +17,7 @@ export const carte = [
   {
     name: "Nouveauté",
     items: [
-      { name: "Un menu unique à 50 euros à la vietnamienne!\n" +
+      { name: "Un menu unique à 55 euros à la vietnamienne!\n" +
           "\n" +
           "HAU vous propose un voyage culinaire en hommage à son pays, le Viêtnam : tous les" +
           " plats d’un repas seront servis en même temps!\n" +
